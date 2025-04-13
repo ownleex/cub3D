@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:29:49 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/14 00:21:29 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/14 00:27:08 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,14 @@ int	main(int argc, char **argv)
 int	render(t_game *game)
 {
     // Vérifier que les structures nécessaires sont initialisées
-    if (!game || !game->mlx || !game->win)
+    if (!game || !game->mlx || !game->win || !game->img.img)
         return (0);
 
     // Effectuer le raycasting pour calculer la scène 3D
     raycasting(game);
     
     // Afficher l'image à l'écran
-    mlx_put_image_to_window(game->mlx, game->win, game->img, 0, 0);
+    mlx_put_image_to_window(game->mlx, game->win, game->img.img, 0, 0);
     
     return (0);
 }

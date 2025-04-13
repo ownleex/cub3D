@@ -6,68 +6,37 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:34:04 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/14 00:19:01 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/14 00:27:17 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/cub3d.h"
 
-/**
- * Récupère la couleur d'un pixel d'une texture
- * @param img Pointeur vers la structure d'image
- * @param x Coordonnée x dans la texture
- * @param y Coordonnée y dans la texture
- * @return La couleur du pixel
- */
-int	get_tex_pixel(t_img *img, int x, int y)
+int	get_tex_pixel(t_texture *texture, int x, int y)
 {
-    char    *dst;
-    int     color;
+	char	*dst;
 
-    // Vérifier que l'image est valide
-    if (!img || !img->addr)
-        return (0);
-    
-    // Vérifier que les coordonnées sont dans les limites
-    if (x < 0 || x >= img->width || y < 0 || y >= img->height)
-        return (0);
-    
-    // Calculer l'adresse du pixel
-    dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel / 8));
-    
-    // Récupérer la couleur
-    color = *(unsigned int*)dst;
-    
-    return (color);
+	if (x < 0 || y < 0 || x >= texture->width || y >= texture->height)
+		return (0);
+	dst = texture->addr + (y * texture->line_length + x * (texture->bits_per_pixel / 8));
+	return (*(unsigned int*)dst);
 }
 
-/**
- * Sélectionne la texture appropriée en fonction de la direction du rayon
- * @param game Pointeur vers la structure du jeu
- * @param ray Pointeur vers la structure du rayon
- * @return Pointeur vers la texture appropriée
- */
-t_img	*select_texture(t_game *game, t_ray *ray)
+t_texture	*select_texture(t_game *game, t_ray *ray)
 {
-    // Vérifier que les pointeurs sont valides
-    if (!game || !ray)
-        return (NULL);
-    
-    // Sélectionner la texture selon le côté touché
-    if (ray->side == 0)
-    {
-        // Mur horizontal
-        if (ray->step.x > 0)
-            return (&game->tex.east);  // Face est
-        else
-            return (&game->tex.west);  // Face ouest
-    }
-    else
-    {
-        // Mur vertical
-        if (ray->step.y > 0)
-            return (&game->tex.south); // Face sud
-        else
-            return (&game->tex.north); // Face nord
-    }
+	// Select texture based on the wall direction
+	if (ray->side == 0) // X-side hit
+	{
+		if (ray->step.x < 0) // Ray is looking west (negative x)
+			return (&game->tex.west);
+		else // Ray is looking east (positive x)
+			return (&game->tex.east);
+	}
+	else // Y-side hit
+	{
+		if (ray->step.y < 0) // Ray is looking north (negative y)
+			return (&game->tex.north);
+		else // Ray is looking south (positive y)
+			return (&game->tex.south);
+	}
 }
