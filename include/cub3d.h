@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:23:48 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/13 23:25:04 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/13 23:43:14 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ typedef struct s_vector {
 	double	y;
 }	t_vector;
 
-typedef struct s_img {
+typedef struct s_texture {
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
@@ -54,13 +54,13 @@ typedef struct s_img {
 	int		endian;
 	int		width;
 	int		height;
-}	t_img;
+}	t_texture;
 
 typedef struct s_tex {
-	t_img	north;
-	t_img	south;
-	t_img	east;
-	t_img	west;
+	t_texture	north;
+	t_texture	south;
+	t_texture	east;
+	t_texture	west;
 	int		floor;
 	int		ceiling;
 }	t_tex;
@@ -90,7 +90,11 @@ typedef struct s_player {
 typedef struct s_game {
 	void		*mlx;
 	void		*win;
-	t_img		img;
+	void		*img;
+	char		*img_addr;
+	int			img_bits_per_pixel;
+	int			img_line_length;
+	int			img_endian;
 	t_tex		tex;
 	t_player	player;
 	t_ray		ray;
@@ -104,7 +108,8 @@ typedef struct s_game {
 /* init.c */
 bool	init_game(t_game *game);
 bool	init_mlx(t_game *game);
-bool	init_texture(t_game *game);
+bool	init_texture_data(t_game *game);
+bool	create_texture(t_game *game, t_texture *texture, int width, int height);
 
 /* parse.c */
 bool	parse_file(t_game *game, char *file_path);
@@ -120,7 +125,7 @@ bool	set_player_position(t_game *game, int x, int y, char dir);
 
 /* parse_texture.c */
 bool	parse_textures(t_game *game);
-bool	load_texture(t_game *game, t_img *img, char *path);
+bool	load_texture(t_game *game, t_texture *texture, char *path);
 bool	parse_color(t_game *game, char *line, char type);
 
 /* raycasting.c */
@@ -131,11 +136,11 @@ void	perform_dda(t_game *game, t_ray *ray);
 /* render.c */
 int		render(t_game *game);
 void	draw_vertical_line(t_game *game, int x, t_ray *ray);
-void	put_pixel_to_img(t_img *img, int x, int y, int color);
+void	put_pixel_to_img(t_game *game, int x, int y, int color);
 
 /* textures.c */
-int		get_tex_pixel(t_img *img, int x, int y);
-t_img	*select_texture(t_game *game, t_ray *ray);
+int		get_tex_pixel(t_texture *texture, int x, int y);
+t_texture	*select_texture(t_game *game, t_ray *ray);
 
 /* move.c */
 void	move_forward(t_game *game);

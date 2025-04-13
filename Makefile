@@ -6,14 +6,14 @@
 #    By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/13 23:22:13 by ayarmaya          #+#    #+#              #
-#    Updated: 2025/04/13 23:22:55 by ayarmaya         ###   ########.fr        #
+#    Updated: 2025/04/13 23:57:27 by ayarmaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = cub3D
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 RM = rm -f
 
 LIBFT = libft/libft.a
