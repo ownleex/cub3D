@@ -6,15 +6,16 @@
 #    By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/13 23:22:13 by ayarmaya          #+#    #+#              #
-#    Updated: 2025/04/13 23:57:27 by ayarmaya         ###   ########.fr        #
+#    Updated: 2025/04/14 01:03:26 by ayarmaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = cub3D
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
+RMDIR = rm -rf
 
 LIBFT = libft/libft.a
 MLX = mlx_linux/libmlx_Linux.a
@@ -22,19 +23,21 @@ MLX_FLAGS = -Lmlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz
 
 HEADERS = -I./include -Ilibft/include -Imlx_linux
 
-SRCS = src/main.c \
-	   src/init.c \
-	   src/parse.c \
-	   src/parse_map.c \
-	   src/parse_texture.c \
-	   src/raycasting.c \
-	   src/render.c \
-	   src/textures.c \
-	   src/move.c \
-	   src/utils.c \
-	   src/exit.c
+SRCDIR = src
+SRCS = $(SRCDIR)/main.c \
+	   $(SRCDIR)/init.c \
+	   $(SRCDIR)/parse.c \
+	   $(SRCDIR)/parse_map.c \
+	   $(SRCDIR)/parse_texture.c \
+	   $(SRCDIR)/raycasting.c \
+	   $(SRCDIR)/render.c \
+	   $(SRCDIR)/textures.c \
+	   $(SRCDIR)/move.c \
+	   $(SRCDIR)/utils.c \
+	   $(SRCDIR)/exit.c
 
-OBJS = $(SRCS:.c=.o)
+OBJDIR = obj
+OBJS = $(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SRCS))
 
 all: $(NAME)
 
@@ -43,11 +46,12 @@ $(NAME): $(OBJS)
 	make -C mlx_linux
 	$(CC) $(OBJS) $(LIBFT) $(MLX) $(MLX_FLAGS) -o $(NAME)
 
-%.o: %.c
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
+	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) $(HEADERS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS)
+	$(RMDIR) $(OBJDIR)
 	make -C libft clean
 	make -C mlx_linux clean
 
