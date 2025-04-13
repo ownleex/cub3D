@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:29:49 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/14 00:28:15 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/14 00:35:23 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,23 @@ int	main(int argc, char **argv)
 		ft_printf("Error\nInvalid file extension. Expected .cub\n");
 		return (EXIT_FAILURE);
 	}
-	if (!parse_file(&game, argv[1]))
-		return (EXIT_FAILURE);
-	if (!init_game(&game))
+	
+	// Initialiser MLX avant de charger les textures
+	if (!init_mlx(&game))
+	{
+		ft_printf("Error\nFailed to initialize MLX\n");
 		clean_exit(&game, EXIT_FAILURE);
+	}
+	
+	if (!parse_file(&game, argv[1]))
+		clean_exit(&game, EXIT_FAILURE);
+		
+	// Le reste de l'initialisation
+	if (!init_player(&game))
+	{
+		ft_printf("Error\nFailed to initialize player\n");
+		clean_exit(&game, EXIT_FAILURE);
+	}
 	
 	mlx_hook(game.win, 2, 1L << 0, key_press, &game);
 	mlx_hook(game.win, 17, 0, exit_hook, &game);

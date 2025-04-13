@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:31:04 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/14 00:26:46 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/14 00:36:18 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ bool	init_player(t_game *game)
 	return (true);
 }
 
+// Cette fonction n'est plus utilisée puisqu'on initialise MLX et les joueurs séparément
 bool	init_game(t_game *game)
 {
 	if (!init_mlx(game))
