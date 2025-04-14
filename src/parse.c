@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:31:34 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/14 00:35:43 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/14 23:25:47 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 bool	parse_file(t_game *game, char *file_path)
 {
-	if (!validate_file(game, file_path))
+	if (!validate_file(file_path))
 		return (false);
 	if (!load_file_content(game, file_path))
 		return (false);
@@ -25,10 +25,8 @@ bool	parse_file(t_game *game, char *file_path)
 	return (true);
 }
 
-bool	validate_file(t_game *game, char *file_path)
-{
-	(void)game; // Indique explicitement que le paramètre n'est pas utilisé
-	
+bool	validate_file(char *file_path)
+{	
 	if (!file_path)
 		return (false);
 	if (!is_valid_ext(file_path, ".cub"))

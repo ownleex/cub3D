@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:23:48 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/14 00:37:57 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/14 23:24:53 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ bool	init_player(t_game *game); // Ajout de la déclaration manquante
 
 /* parse.c */
 bool	parse_file(t_game *game, char *file_path);
-bool	validate_file(t_game *game, char *file_path);
+bool	validate_file(char *file_path);
 bool	load_file_content(t_game *game, char *file_path);
 
 /* parse_map.c */
