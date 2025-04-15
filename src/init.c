@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:31:04 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/15 22:05:51 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/16 01:41:38 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ bool	init_mlx(t_game *game)
 {
 	int	i;
 
+	i = 0;
 	while (i < 128)
 	{
 		game->keys[i] = 0;
