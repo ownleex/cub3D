@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:31:04 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/15 19:37:45 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/15 22:05:51 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,15 @@ bool	create_texture(t_game *game, t_texture *texture, int width, int height)
 
 bool	init_mlx(t_game *game)
 {
-	int i;
+	int	i;
 
-	// Initialiser le tableau des touches à 0
-	for (i = 0; i < 128; i++)
+	while (i < 128)
+	{
 		game->keys[i] = 0;
-	
-	// Initialiser les états des flèches à 0
+		i++;
+	}
 	game->key_left = 0;
 	game->key_right = 0;
-		
 	game->mlx = mlx_init();
 	if (!game->mlx)
 		return (false);
@@ -63,24 +62,9 @@ bool	init_texture_data(t_game *game)
 
 bool	init_player(t_game *game)
 {
-	// Player direction and plane are initialized during map parsing
-	// based on the player's starting orientation (N, S, E, W)
-	// This function is called to ensure the player has been initialized correctly
 	if (game->player.dir.x == 0 && game->player.dir.y == 0)
 		return (false);
 	if (game->player.plane.x == 0 && game->player.plane.y == 0)
-		return (false);
-	return (true);
-}
-
-// Cette fonction n'est plus utilisée puisqu'on initialise MLX et les joueurs séparément
-bool	init_game(t_game *game)
-{
-	if (!init_mlx(game))
-		return (false);
-	if (!init_texture_data(game))
-		return (false);
-	if (!init_player(game))
 		return (false);
 	return (true);
 }

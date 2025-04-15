@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:23:48 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/15 19:37:29 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/15 22:04:42 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,6 @@ typedef struct s_game {
 }	t_game;
 
 /* init.c */
-bool	init_game(t_game *game);
 bool	init_mlx(t_game *game);
 bool	init_texture_data(t_game *game);
 bool	create_texture(t_game *game, t_texture *texture, int width, int height);
