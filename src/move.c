@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:34:22 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/15 01:36:45 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/15 21:36:06 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ void	move_left(t_game *game)
 	double	new_y;
 	
 	// Calculate new position (moving perpendicular to the direction)
-	new_x = game->player.pos.x - game->player.dir.y * MOVE_SPEED;
-	new_y = game->player.pos.y + game->player.dir.x * MOVE_SPEED;
+	new_x = game->player.pos.x + game->player.dir.y * MOVE_SPEED;
+	new_y = game->player.pos.y - game->player.dir.x * MOVE_SPEED;
 	
 	// Check for collision with walls
 	if (game->map[(int)game->player.pos.y][(int)new_x] != '1')
@@ -66,8 +66,8 @@ void	move_right(t_game *game)
 	double	new_y;
 	
 	// Calculate new position (moving perpendicular to the direction)
-	new_x = game->player.pos.x + game->player.dir.y * MOVE_SPEED;
-	new_y = game->player.pos.y - game->player.dir.x * MOVE_SPEED;
+	new_x = game->player.pos.x - game->player.dir.y * MOVE_SPEED;
+	new_y = game->player.pos.y + game->player.dir.x * MOVE_SPEED;
 	
 	// Check for collision with walls
 	if (game->map[(int)game->player.pos.y][(int)new_x] != '1')
