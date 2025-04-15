@@ -1,5 +1,5 @@
 /* XPM */
-static char *e13405b8ec064b25a61be5567c093739aABurqoo7hMYO3uA[] = {
+static char *north[] = {
 /* columns rows colors chars-per-pixel */
 "64 64 166 2 ",
 "   c #6A472F",
