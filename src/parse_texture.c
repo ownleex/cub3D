@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:32:37 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/14 00:26:56 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/15 19:06:22 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,32 @@
 
 bool	load_texture(t_game *game, t_texture *texture, char *path)
 {
-	// Trim possible whitespace
+	// Supprimer les espaces possibles au début
 	while (*path && (*path == ' ' || *path == '\t'))
 		path++;
 
+	// Charger la texture à partir du fichier XPM
 	texture->img = mlx_xpm_file_to_image(game->mlx, path, &texture->width, &texture->height);
 	if (!texture->img)
 	{
-		ft_printf("Error\nCould not load texture: %s\n", path);
+		ft_printf("Error\nImpossible de charger la texture: %s\n", path);
 		return (false);
 	}
 	
+	// Obtenir l'adresse de l'image
 	texture->addr = mlx_get_data_addr(texture->img, &texture->bits_per_pixel,
 			&texture->line_length, &texture->endian);
+	
+	// Vérifier que la texture est exactement de 64x64 pixels
+	if (texture->width != 64 || texture->height != 64)
+	{
+		ft_printf("Error\nLa texture %s n'est pas de 64x64 pixels (dimensions actuelles: %dx%d)\n", 
+			path, texture->width, texture->height);
+		// Libérer la texture déjà chargée
+		mlx_destroy_image(game->mlx, texture->img);
+		texture->img = NULL;
+		return (false);
+	}
 	
 	return (true);
 }
@@ -41,35 +54,35 @@ bool	parse_color_value(char *str, int *rgb)
 	
 	while (str[i])
 	{
-		// Skip whitespace
+		// Ignorer les espaces
 		while (str[i] && (str[i] == ' ' || str[i] == '\t'))
 			i++;
 		
-		// Parse the RGB component
+		// Analyser la composante RGB
 		if (ft_isdigit(str[i]))
 		{
 			if (count >= 3)
-				return (false); // Too many components
+				return (false); // Trop de composantes
 			
 			rgb[count] = ft_atoi(&str[i]);
 			if (rgb[count] < 0 || rgb[count] > 255)
-				return (false); // Invalid component value
+				return (false); // Valeur de composante invalide
 			
 			count++;
 			
-			// Skip the digits
+			// Ignorer les chiffres
 			while (str[i] && ft_isdigit(str[i]))
 				i++;
 		}
 		
-		// Skip comma or whitespace
+		// Ignorer la virgule ou l'espace
 		if (str[i] == ',')
 			i++;
 		else if (str[i] && str[i] != ' ' && str[i] != '\t')
-			return (false); // Invalid character
+			return (false); // Caractère invalide
 	}
 	
-	return (count == 3); // Must have exactly 3 components
+	return (count == 3); // Doit avoir exactement 3 composantes
 }
 
 bool	parse_color(t_game *game, char *line, char type)
@@ -78,14 +91,14 @@ bool	parse_color(t_game *game, char *line, char type)
 	int		color;
 	char	*value;
 	
-	// Skip the identifier and spaces
+	// Ignorer l'identifiant et les espaces
 	value = line + 1;
 	while (*value && (*value == ' ' || *value == '\t'))
 		value++;
 	
 	if (!parse_color_value(value, rgb))
 	{
-		ft_printf("Error\nInvalid color format: %s\n", line);
+		ft_printf("Error\nFormat de couleur invalide: %s\n", line);
 		return (false);
 	}
 	
@@ -101,7 +114,7 @@ bool	parse_color(t_game *game, char *line, char type)
 
 bool	parse_texture_line(t_game *game, char *line)
 {
-	// Parse texture paths based on the identifier
+	// Analyser les chemins de texture en fonction de l'identifiant
 	if (ft_strncmp(line, "NO ", 3) == 0)
 		return (load_texture(game, &game->tex.north, line + 3));
 	else if (ft_strncmp(line, "SO ", 3) == 0)
@@ -115,19 +128,19 @@ bool	parse_texture_line(t_game *game, char *line)
 	else if (ft_strncmp(line, "C ", 2) == 0)
 		return (parse_color(game, line, 'C'));
 	
-	// Ignore empty lines and other content (map will be parsed separately)
+	// Ignorer les lignes vides et autre contenu (la carte sera analysée séparément)
 	return (true);
 }
 
 bool	check_textures_loaded(t_game *game)
 {
-	// Check that all required textures and colors are loaded
+	// Vérifier que toutes les textures et couleurs requises sont chargées
 	if (!game->tex.north.img || !game->tex.south.img ||
 		!game->tex.east.img || !game->tex.west.img)
 		return (false);
 	
-	// The colors use 0 as their default value, so we can't check them directly
-	// Instead, we rely on the parsing process to ensure they are set.
+	// Les couleurs utilisent 0 comme valeur par défaut, donc nous ne pouvons pas les vérifier directement
+	// Au lieu de cela, nous comptons sur le processus d'analyse pour s'assurer qu'elles sont définies.
 	
 	return (true);
 }
@@ -139,14 +152,14 @@ bool	parse_textures(t_game *game)
 	i = 0;
 	while (game->file[i])
 	{
-		// Skip empty lines
+		// Ignorer les lignes vides
 		if (game->file[i][0] == '\0')
 		{
 			i++;
 			continue;
 		}
 		
-		// Process texture and color lines
+		// Traiter les lignes de texture et de couleur
 		if (ft_strncmp(game->file[i], "NO ", 3) == 0 ||
 			ft_strncmp(game->file[i], "SO ", 3) == 0 ||
 			ft_strncmp(game->file[i], "WE ", 3) == 0 ||

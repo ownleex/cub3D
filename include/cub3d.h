@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:23:48 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/14 23:24:53 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/15 14:52:43 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ bool	init_game(t_game *game);
 bool	init_mlx(t_game *game);
 bool	init_texture_data(t_game *game);
 bool	create_texture(t_game *game, t_texture *texture, int width, int height);
-bool	init_player(t_game *game); // Ajout de la déclaration manquante
+bool	init_player(t_game *game);
 
 /* parse.c */
 bool	parse_file(t_game *game, char *file_path);
