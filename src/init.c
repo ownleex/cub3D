@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:31:04 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/14 00:36:18 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/15 19:37:45 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,16 @@ bool	create_texture(t_game *game, t_texture *texture, int width, int height)
 
 bool	init_mlx(t_game *game)
 {
+	int i;
+
+	// Initialiser le tableau des touches à 0
+	for (i = 0; i < 128; i++)
+		game->keys[i] = 0;
+	
+	// Initialiser les états des flèches à 0
+	game->key_left = 0;
+	game->key_right = 0;
+		
 	game->mlx = mlx_init();
 	if (!game->mlx)
 		return (false);

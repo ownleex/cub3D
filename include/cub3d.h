@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:23:48 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/15 14:52:43 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/15 19:37:29 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,9 @@ typedef struct s_game {
 	int			map_width;
 	int			map_height;
 	bool		textures_loaded;
+	int			keys[128]; // Tableau pour les touches standard
+	int			key_left; // État de la flèche gauche
+	int			key_right; // État de la flèche droite
 }	t_game;
 
 /* init.c */
@@ -164,5 +167,7 @@ void	error_exit(t_game *game, char *message);
 
 /* hooks.c */
 int		key_press(int keycode, t_game *game);
+int		key_release(int keycode, t_game *game);
+int		update_game(t_game *game);
 
 #endif
