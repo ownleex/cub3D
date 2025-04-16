@@ -6,11 +6,11 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:35:02 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/13 23:41:12 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/16 18:47:34 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "cub3d.h"
 
 void	free_file(t_game *game)
 {

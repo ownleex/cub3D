@@ -6,11 +6,11 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:32:37 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/15 19:06:22 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/16 18:48:08 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "cub3d.h"
 
 bool	load_texture(t_game *game, t_texture *texture, char *path)
 {

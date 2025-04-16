@@ -6,11 +6,11 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:31:34 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/14 23:25:47 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/16 18:48:17 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "cub3d.h"
 
 bool	parse_file(t_game *game, char *file_path)
 {

@@ -6,11 +6,11 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:31:04 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/16 01:41:38 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/16 18:47:42 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "cub3d.h"
 
 bool	create_texture(t_game *game, t_texture *texture, int width, int height)
 {

@@ -6,11 +6,11 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:32:04 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/13 23:32:13 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/16 18:48:03 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "cub3d.h"
 
 int	find_map_start(t_game *game)
 {

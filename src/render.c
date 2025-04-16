@@ -6,11 +6,11 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:33:28 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/15 22:29:52 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/16 18:48:38 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "cub3d.h"
 
 void	put_pixel_to_img(t_game *game, int x, int y, int color)
 {

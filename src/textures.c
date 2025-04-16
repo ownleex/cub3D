@@ -6,11 +6,11 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:34:04 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/14 00:27:17 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/16 18:48:45 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "cub3d.h"
 
 int	get_tex_pixel(t_texture *texture, int x, int y)
 {

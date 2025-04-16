@@ -6,11 +6,11 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:29:49 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/15 22:00:47 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/16 18:47:49 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "cub3d.h"
 
 int	key_press(int keycode, t_game *game)
 {

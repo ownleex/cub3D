@@ -6,11 +6,11 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:34:43 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/13 23:34:48 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/16 18:48:57 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "cub3d.h"
 
 bool	is_valid_ext(char *file, char *ext)
 {
