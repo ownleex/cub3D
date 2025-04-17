@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:32:04 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/16 18:48:03 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/17 16:45:51 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -284,7 +284,7 @@ bool	validate_map(t_game *game)
 	}
 	if (!find_player(game))
 	{
-		ft_printf("Error\nInvalid player position (must be exactly one N, S, E, or W)\n");
+		ft_printf("Error\nMap must contain exactly one player position (N, S, E, or W)\n");
 		return (false);
 	}
 	if (!check_map_borders(game))
