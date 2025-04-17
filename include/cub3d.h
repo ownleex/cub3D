@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:23:48 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/16 00:59:10 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/17 15:39:58 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,8 +116,8 @@ bool	init_player(t_game *game);
 
 /* parse.c */
 bool	parse_file(t_game *game, char *file_path);
-bool	validate_file(char *file_path);
-bool	load_file_content(t_game *game, char *file_path);
+int		open_file(char *file_path);
+bool	load_file_content(t_game *game, int fd);
 
 /* parse_map.c */
 bool	parse_map(t_game *game);
