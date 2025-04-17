@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:33:28 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/16 18:48:38 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/17 14:51:27 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ void	draw_textured_wall(t_game *game, int x, t_ray *ray)
 	tex_pos = (ray->draw_start - WINDOW_HEIGHT / 2 + ray->line_height / 2) * step;
 	
 	// Draw the wall from draw_start to draw_end
-	for (y = ray->draw_start; y <= ray->draw_end; y++)
+	y = ray->draw_start;
+	while (y <= ray->draw_end)
 	{
 		// Cast the texture coordinate to integer
 		tex_y = (int)tex_pos & (TEXTURE_HEIGHT - 1);
@@ -64,6 +65,7 @@ void	draw_textured_wall(t_game *game, int x, t_ray *ray)
 		
 		// Put pixel to image
 		put_pixel_to_img(game, x, y, color);
+		y++;
 	}
 }
 
