@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:33:28 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/17 17:25:55 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/17 17:43:20 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,8 @@ void	draw_vertical_line(t_game *game, int x, t_ray *ray)
 int	render(t_game *game)
 {
 	// Clear the image
-	//ft_memset(game->img_addr, 0, WINDOW_WIDTH * WINDOW_HEIGHT * (game->img_bits_per_pixel / 8));
-	mlx_clear_window(game->mlx, game->win);
+	ft_memset(game->img_addr, 0, WINDOW_WIDTH * WINDOW_HEIGHT * (game->img_bits_per_pixel / 8));
+	//mlx_clear_window(game->mlx, game->win);
 	// Perform raycasting
 	raycasting(game);
 	
