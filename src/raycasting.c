@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:33:11 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/19 14:03:48 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/19 14:17:17 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,8 +95,8 @@ void	perform_dda(t_game *game, t_ray *ray)
 void	calculate_wall_height(t_ray *ray)
 {
 	// Sécuriser la distance projetée (évite les divisions par zéro ou les valeurs négatives)
-	if (ray->perp_wall_dist <= 1e-6)
-		ray->perp_wall_dist = 1e-6;
+	if (ray->perp_wall_dist < 0.000001)
+		ray->perp_wall_dist = 0.000001;
 
 	// Calculer la hauteur de la ligne à dessiner
 	ray->line_height = (int)(WINDOW_HEIGHT / ray->perp_wall_dist);
