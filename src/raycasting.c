@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:33:11 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/16 18:48:31 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/19 14:03:48 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,18 +94,28 @@ void	perform_dda(t_game *game, t_ray *ray)
 
 void	calculate_wall_height(t_ray *ray)
 {
-	// Calculate height of line to draw on screen
+	// Sécuriser la distance projetée (évite les divisions par zéro ou les valeurs négatives)
+	if (ray->perp_wall_dist <= 1e-6)
+		ray->perp_wall_dist = 1e-6;
+
+	// Calculer la hauteur de la ligne à dessiner
 	ray->line_height = (int)(WINDOW_HEIGHT / ray->perp_wall_dist);
-	
-	// Calculate lowest and highest pixel to fill in current stripe
+
+	// Déterminer le début de la ligne verticale à dessiner
 	ray->draw_start = -ray->line_height / 2 + WINDOW_HEIGHT / 2;
 	if (ray->draw_start < 0)
 		ray->draw_start = 0;
-	
+	//if (ray->draw_start >= WINDOW_HEIGHT)
+	//	ray->draw_start = WINDOW_HEIGHT - 1;
+
+	// Déterminer la fin de la ligne verticale à dessiner
 	ray->draw_end = ray->line_height / 2 + WINDOW_HEIGHT / 2;
+	//if (ray->draw_end < 0)
+	//	ray->draw_end = 0;
 	if (ray->draw_end >= WINDOW_HEIGHT)
 		ray->draw_end = WINDOW_HEIGHT - 1;
 }
+
 
 void	calculate_texture_x(t_game *game, t_ray *ray)
 {
