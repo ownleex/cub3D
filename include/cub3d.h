@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:23:48 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/20 21:07:22 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/21 00:18:08 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,13 @@
 # define CUB3D_H
 
 # include "../libft/include/libft.h"
-# include "../libft/include/ft_printf.h"
 # include "../libft/include/get_next_line.h"
 # include "../mlx_linux/mlx.h"
-# include "../mlx_linux/mlx_int.h"
 # include <math.h>
 # include <stdlib.h>
 # include <stdbool.h>
 # include <fcntl.h>
 # include <stdio.h>
-# include <string.h>
 
 # define WINDOW_WIDTH 1280
 # define WINDOW_HEIGHT 720

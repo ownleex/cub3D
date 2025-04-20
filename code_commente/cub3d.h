@@ -3,7 +3,6 @@
 # define CUB3D_H
 
 # include "../libft/include/libft.h"
-# include "../libft/include/ft_printf.h"
 # include "../libft/include/get_next_line.h"
 # include "../mlx_linux/mlx.h"
 # include "../mlx_linux/mlx_int.h"
@@ -12,7 +11,6 @@
 # include <stdbool.h>
 # include <fcntl.h>
 # include <stdio.h>
-# include <string.h>
 
 # define WINDOW_WIDTH 1280
 # define WINDOW_HEIGHT 720
