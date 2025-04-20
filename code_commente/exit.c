@@ -103,20 +103,6 @@ int	exit_hook(t_game *game)
 }
 
 /*
-** Affiche un message d'erreur et quitte le programme
-** param game: Pointeur vers la structure principale du jeu
-** param message: Message d'erreur à afficher
-*/
-void	error_exit(t_game *game, char *message)
-{
-	// Afficher le message d'erreur
-	ft_printf("Error\n%s\n", message);
-	
-	// Libérer toutes les ressources et quitter avec un code d'erreur
-	clean_exit(game, EXIT_FAILURE);
-}
-
-/*
 ** Libère toutes les ressources et quitte le programme
 ** param game: Pointeur vers la structure principale du jeu
 ** param status: Code de sortie

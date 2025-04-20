@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:35:02 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/16 18:47:34 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/20 17:41:06 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,6 @@ int	exit_hook(t_game *game)
 {
 	clean_exit(game, EXIT_SUCCESS);
 	return (0);
-}
-
-void	error_exit(t_game *game, char *message)
-{
-	ft_printf("Error\n%s\n", message);
-	clean_exit(game, EXIT_FAILURE);
 }
 
 void	clean_exit(t_game *game, int status)

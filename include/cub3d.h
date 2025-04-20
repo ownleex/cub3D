@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:23:48 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/20 17:09:06 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/20 17:44:41 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,8 +110,6 @@ typedef struct s_game {
 
 /* init.c */
 bool	init_mlx(t_game *game);
-bool	init_texture_data(t_game *game);
-bool	create_texture(t_game *game, t_texture *texture, int width, int height);
 bool	init_player(t_game *game);
 
 /* parse.c */
@@ -160,7 +158,6 @@ int		create_rgb(int r, int g, int b);
 void	clean_exit(t_game *game, int status);
 int		exit_hook(t_game *game);
 void	free_textures(t_game *game);
-void	error_exit(t_game *game, char *message);
 
 /* hooks.c */
 int		key_press(int keycode, t_game *game);

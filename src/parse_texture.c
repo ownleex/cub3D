@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:32:37 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/17 16:00:14 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/20 17:30:34 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,10 +138,6 @@ bool	check_textures_loaded(t_game *game)
 	if (!game->tex.north.img || !game->tex.south.img ||
 		!game->tex.east.img || !game->tex.west.img)
 		return (false);
-	
-	// Les couleurs utilisent 0 comme valeur par défaut, donc nous ne pouvons pas les vérifier directement
-	// Au lieu de cela, nous comptons sur le processus d'analyse pour s'assurer qu'elles sont définies.
-	
 	return (true);
 }
 
