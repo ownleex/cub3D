@@ -92,8 +92,6 @@ bool parse_file(t_game *game, char *file_path)
         close(fd);
         return (false);
     }
-    
-    // Fermer le fichier, son contenu est maintenant en mémoire
     close(fd);
     
     // Analyser les textures et couleurs définies dans le fichier

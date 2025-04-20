@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:23:48 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/20 16:26:22 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/20 17:09:06 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,8 +155,6 @@ void	rotate(t_game *game, double angle);
 /* utils.c */
 bool	is_valid_ext(char *file, char *ext);
 int		create_rgb(int r, int g, int b);
-int		sign(double x);
-void	free_split(char **split);
 
 /* exit.c */
 void	clean_exit(t_game *game, int status);

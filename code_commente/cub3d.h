@@ -150,8 +150,6 @@ void	rotate(t_game *game, double angle);
 /* utils.c */
 bool	is_valid_ext(char *file, char *ext);
 int		create_rgb(int r, int g, int b);
-int		sign(double x);
-void	free_split(char **split);
 
 /* exit.c */
 void	clean_exit(t_game *game, int status);
