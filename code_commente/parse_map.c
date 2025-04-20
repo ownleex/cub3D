@@ -355,25 +355,25 @@ bool	validate_map(t_game *game)
 	// Vérifier que tous les caractères sont valides
 	if (!check_map_chars(game))
 	{
-		ft_printf("Error\nInvalid characters in map\n");
+		printf("Error\nInvalid characters in map\n");
 		return (false);
 	}
 	// Vérifier qu'il y a exactement une position de joueur
 	if (!find_player(game))
 	{
-		ft_printf("Error\nMap must contain exactly one player position (N, S, E, or W)\n");
+		printf("Error\nMap must contain exactly one player position (N, S, E, or W)\n");
 		return (false);
 	}
 	// Vérifier que les bordures sont des murs
 	if (!check_map_borders(game))
 	{
-		ft_printf("Error\nMap borders must be walls (1) or surrounded by walls\n");
+		printf("Error\nMap borders must be walls (1) or surrounded by walls\n");
 		return (false);
 	}
 	// Vérifier que la carte est complètement fermée
 	if (!check_map_closed(game))
 	{
-		ft_printf("Error\nMap must be completely enclosed by walls\n");
+		printf("Error\nMap must be completely enclosed by walls\n");
 		return (false);
 	}
 	return (true);
@@ -394,7 +394,7 @@ bool	parse_map(t_game *game)
 	start = find_map_start(game);
 	if (start < 0)
 	{
-		ft_printf("Error\nCould not find map in file\n");
+		printf("Error\nCould not find map in file\n");
 		return (false);
 	}
 	
@@ -402,7 +402,7 @@ bool	parse_map(t_game *game)
 	height = count_map_height(game, start);
 	if (height <= 0)
 	{
-		ft_printf("Error\nInvalid map height\n");
+		printf("Error\nInvalid map height\n");
 		return (false);
 	}
 	
@@ -410,14 +410,14 @@ bool	parse_map(t_game *game)
 	width = get_map_width(game, start, height);
 	if (width <= 0)
 	{
-		ft_printf("Error\nInvalid map width\n");
+		printf("Error\nInvalid map width\n");
 		return (false);
 	}
 	
 	// Extraire la carte du fichier
 	if (!extract_map(game, start, height, width))
 	{
-		ft_printf("Error\nFailed to extract map\n");
+		printf("Error\nFailed to extract map\n");
 		return (false);
 	}
 	

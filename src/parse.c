@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:31:34 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/20 18:30:35 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/20 20:42:57 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	open_file(char *file_path)
 	fd = open(file_path, O_RDONLY);
 	if (fd < 0)
 	{
-		ft_printf("Error\nCould not open file: %s\n", file_path);
+		printf("Error\nCould not open file: %s\n", file_path);
 		return (-1);
 	}
 	return (fd);

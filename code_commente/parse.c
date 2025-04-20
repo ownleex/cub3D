@@ -18,7 +18,7 @@ int open_file(char *file_path)
     fd = open(file_path, O_RDONLY);
     if (fd < 0)
     {
-        ft_printf("Error\nCould not open file: %s\n", file_path);
+        printf("Error\nCould not open file: %s\n", file_path);
         return (-1);
     }
     

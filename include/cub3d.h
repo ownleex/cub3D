@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:23:48 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/20 17:53:31 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/20 20:45:39 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@
 # define KEY_LEFT 65361
 # define KEY_RIGHT 65363
 
-# define MOVE_SPEED 0.01
-# define ROT_SPEED 0.01
+# define MOVE_SPEED 0.005
+# define ROT_SPEED 0.005
 
 typedef struct s_vector
 {
