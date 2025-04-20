@@ -115,8 +115,9 @@ int	render(t_game *game)
 {
 	// Effacer l'image (remplir de zéros)
 	ft_memset(game->img_addr, 0, WINDOW_WIDTH * WINDOW_HEIGHT * (game->img_bits_per_pixel / 8));
-		// ou avec :
-	//mlx_clear_window(game->mlx, game->win);
+	// ou avec :
+		//mlx_clear_window(game->mlx, game->win);
+	// plus rapide mais risque de bug, à voir ensemble
 	
 	// Effectuer le raycasting pour calculer ce qui doit être affiché
 	raycasting(game);
