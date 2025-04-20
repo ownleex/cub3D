@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:32:37 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/20 18:42:17 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/20 20:50:48 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ bool	load_texture(t_game *game, t_texture *texture, char *path)
 	texture->img = mlx_xpm_file_to_image(game->mlx, path, &texture->width, &texture->height);
 	if (!texture->img)
 	{
-		printf("Error\nImpossible de charger la texture: %s\n", path);
+		printf("Error\nFailed to load texture: %s\n", path);
 		return (false);
 	}
 	texture->addr = mlx_get_data_addr(texture->img, &texture->bits_per_pixel, &texture->line_length, &texture->endian);
 	if (texture->width != 64 || texture->height != 64)
 	{
-		printf("Error\nLa texture %s n'est pas de 64x64 pixels (dimensions actuelles: %dx%d)\n", path, texture->width, texture->height);
+		printf("Error\nThe texture %s is not 64x64 pixels (current dimensions: %dx%d)\n", path, texture->width, texture->height);
 		mlx_destroy_image(game->mlx, texture->img);
 		texture->img = NULL;
 		return (false);
@@ -74,7 +74,7 @@ bool	parse_color(t_game *game, char *line, char type)
 		value++;
 	if (!parse_color_value(value, rgb))
 	{
-		printf("Error\nFormat de couleur invalide: %s\n", line);
+		printf("Error\nInvalid color format: %s\n", line);
 		return (false);
 	}
 	color = create_rgb(rgb[0], rgb[1], rgb[2]);

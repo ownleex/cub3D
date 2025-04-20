@@ -18,7 +18,7 @@ bool	load_texture(t_game *game, t_texture *texture, char *path)
 	texture->img = mlx_xpm_file_to_image(game->mlx, path, &texture->width, &texture->height);
 	if (!texture->img)
 	{
-		printf("Error\nImpossible de charger la texture: %s\n", path);
+		printf("Error\nFailed to load texture: %s\n", path);
 		return (false);
 	}
 	
@@ -29,8 +29,7 @@ bool	load_texture(t_game *game, t_texture *texture, char *path)
 	// Vérifier que la texture est exactement de 64x64 pixels
 	if (texture->width != 64 || texture->height != 64)
 	{
-		printf("Error\nLa texture %s n'est pas de 64x64 pixels (dimensions actuelles: %dx%d)\n", 
-			path, texture->width, texture->height);
+		printf("Error\nThe texture %s is not 64x64 pixels (current dimensions: %dx%d)\n", path, texture->width, texture->height);
 		// Libérer la texture déjà chargée pour éviter les fuites mémoire
 		mlx_destroy_image(game->mlx, texture->img);
 		texture->img = NULL;
@@ -112,7 +111,7 @@ bool	parse_color(t_game *game, char *line, char type)
 	// Analyser les valeurs RGB
 	if (!parse_color_value(value, rgb))
 	{
-		printf("Error\nFormat de couleur invalide: %s\n", line);
+		printf("Error\nInvalid color format: %s\n", line);
 		return (false);
 	}
 	
