@@ -2,7 +2,7 @@
 #include "cub3d.h"
 
 /*
-** Déplace le joueur vers l'avant avec gestion des collisions (version bonus)
+** Déplace le joueur vers l'avant avec gestion des collisions
 ** Cette fonction vérifie si le mouvement est possible avant de l'effectuer
 ** param game: Pointeur vers la structure principale du jeu
 */
@@ -25,7 +25,7 @@ void	move_forward(t_game *game)
 }
 
 /*
-** Déplace le joueur vers l'arrière avec gestion des collisions (version bonus)
+** Déplace le joueur vers l'arrière avec gestion des collisions
 ** Cette fonction vérifie si le mouvement est possible avant de l'effectuer
 ** param game: Pointeur vers la structure principale du jeu
 */
@@ -48,7 +48,7 @@ void	move_backward(t_game *game)
 }
 
 /*
-** Déplace le joueur vers la gauche avec gestion des collisions (version bonus)
+** Déplace le joueur vers la gauche avec gestion des collisions
 ** Le déplacement est perpendiculaire à la direction du regard
 ** param game: Pointeur vers la structure principale du jeu
 */
@@ -72,7 +72,7 @@ void	move_left(t_game *game)
 }
 
 /*
-** Déplace le joueur vers la droite avec gestion des collisions (version bonus)
+** Déplace le joueur vers la droite avec gestion des collisions
 ** Le déplacement est perpendiculaire à la direction du regard
 ** param game: Pointeur vers la structure principale du jeu
 */
@@ -96,7 +96,7 @@ void	move_right(t_game *game)
 }
 
 /*
-** Fait tourner le joueur et le plan de caméra (version bonus)
+** Fait tourner le joueur et le plan de caméra
 ** Cette fonction applique une matrice de rotation 2D
 ** param game: Pointeur vers la structure principale du jeu
 ** param angle: Angle de rotation en radians (positif pour droite, négatif pour gauche)
