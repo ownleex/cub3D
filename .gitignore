@@ -58,24 +58,5 @@ settings.json
 *.pdf
 all
 
-megaphone
-phonebook
-minishell
-zombie
-zombie_horde
-brain
-fixed
-unnecessary_violence
-sed_is_for_losers
-harl
-harlFilter
-scavtrap
-fragtrap
-claptrap
-animal
 cub3d
 
-valgrind/valgrind_suppressions.txt
-valgrind/valgrind_suppressions_raw.txt
-valgrind/master_suppressions/valgrind_suppressions.txt
-code_master/code_master.txt
