@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:23:48 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/20 20:45:39 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/20 21:07:22 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ typedef struct s_ray
 	int			map_y;
 	int			side;
 	double		perp_wall_dist;
-	double		wall_x;
 	int			tex_x;
 	int			line_height;
 	int			draw_start;
@@ -108,7 +107,6 @@ typedef struct s_game
 	char		**file;
 	int			map_width;
 	int			map_height;
-	bool		textures_loaded;
 	int			keys[128];
 	int			key_left;
 	int			key_right;

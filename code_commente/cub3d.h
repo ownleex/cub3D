@@ -71,7 +71,6 @@ typedef struct s_ray
 	int			map_y;      /* Position y dans la grille de la carte */
 	int			side;       /* Indique si un mur a été touché côté x (0) ou côté y (1) */
 	double		perp_wall_dist; /* Distance perpendiculaire du joueur au mur touché */
-	double		wall_x;     /* Coordonnée exacte où le rayon a touché le mur (pour le texturing) */
 	int			tex_x;      /* Coordonnée x de la texture à appliquer */
 	int			line_height; /* Hauteur de la ligne verticale à dessiner */
 	int			draw_start; /* Pixel de début de dessin de la ligne (y) */
@@ -103,7 +102,6 @@ typedef struct s_game
 	char		**file;     /* Contenu du fichier .cub */
 	int			map_width;  /* Largeur de la carte */
 	int			map_height; /* Hauteur de la carte */
-	bool		textures_loaded; /* Indique si les textures ont été chargées avec succès */
 	int			keys[128];  /* Tableau pour suivre l'état des touches standard */
 	int			key_left;   /* État de la flèche gauche */
 	int			key_right;  /* État de la flèche droite */

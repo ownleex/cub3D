@@ -150,7 +150,6 @@ void	calculate_texture_x(t_game *game, t_ray *ray)
 	
 	// Ne garder que la partie fractionnaire
 	wall_x -= floor(wall_x);
-	ray->wall_x = wall_x;
 	
 	// Convertir en coordonnée X de texture
 	ray->tex_x = (int)(wall_x * (double)TEXTURE_WIDTH);

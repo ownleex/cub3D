@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:33:11 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/20 18:15:23 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/20 21:03:51 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,6 @@ void	calculate_texture_x(t_game *game, t_ray *ray)
 	else
 		wall_x = game->player.pos.x + ray->perp_wall_dist * ray->dir.x;
 	wall_x -= floor(wall_x);
-	ray->wall_x = wall_x;
 	ray->tex_x = (int)(wall_x * (double)TEXTURE_WIDTH);
 	if ((ray->side == 0 && ray->dir.x > 0) || (ray->side == 1 && ray->dir.y < 0))
 		ray->tex_x = TEXTURE_WIDTH - ray->tex_x - 1;
