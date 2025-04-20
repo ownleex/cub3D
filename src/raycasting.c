@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:33:11 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/20 21:03:51 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/21 01:39:22 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,20 @@ void	perform_dda(t_game *game, t_ray *ray)
 	bool	hit;
 
 	hit = false;
+	if (game->map[ray->map_y][ray->map_x] == '1')
+	{
+		if (ray->side_dist.x < ray->side_dist.y)
+		{
+			ray->side  = 0;
+			ray->perp_wall_dist = ray->side_dist.x;
+		}
+		else
+		{
+			ray->side  = 1;
+			ray->perp_wall_dist = ray->side_dist.y;
+		}
+		return ;
+	}
 	while (!hit)
 	{
 		if (ray->side_dist.x < ray->side_dist.y)

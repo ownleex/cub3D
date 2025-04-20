@@ -75,7 +75,26 @@ void	perform_dda(t_game *game, t_ray *ray)
 	bool	hit;
 
 	hit = false;
+
+	// 1) Si on démarre déjà dans un mur -> collision immédiate
+	// pour eviter la disparition des murs lorsqu'on les traverse
+    if (game->map[ray->map_y][ray->map_x] == '1')
+    {
+        // on choisit la frontière la plus proche
+        if (ray->side_dist.x < ray->side_dist.y)
+        {
+            ray->side  = 0;
+            ray->perp_wall_dist = ray->side_dist.x;
+        }
+        else
+        {
+            ray->side  = 1;
+            ray->perp_wall_dist = ray->side_dist.y;
+        }
+        return;
+    }
 	
+	// 2) sinon DDA classique
 	// Exécuter l'algorithme DDA jusqu'à ce qu'un mur soit touché
 	while (!hit)
 	{
