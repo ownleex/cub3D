@@ -6,31 +6,11 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:31:34 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/17 15:38:32 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/20 16:50:39 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-bool parse_file(t_game *game, char *file_path)
-{
-    int fd;
-    
-    fd = open_file(file_path);
-    if (fd < 0)
-        return (false);
-    if (!load_file_content(game, fd))
-    {
-        close(fd);
-        return (false);
-    }
-    close(fd);
-    if (!parse_textures(game))
-        return (false);
-    if (!parse_map(game))
-        return (false);
-    return (true);
-}
 
 int open_file(char *file_path)
 {
@@ -68,6 +48,26 @@ bool load_file_content(t_game *game, int fd)
     game->file = ft_split(content, '\n');
     free(content);
     if (!game->file)
+        return (false);
+    return (true);
+}
+
+bool parse_file(t_game *game, char *file_path)
+{
+    int fd;
+    
+    fd = open_file(file_path);
+    if (fd < 0)
+        return (false);
+    if (!load_file_content(game, fd))
+    {
+        close(fd);
+        return (false);
+    }
+    close(fd);
+    if (!parse_textures(game))
+        return (false);
+    if (!parse_map(game))
         return (false);
     return (true);
 }
