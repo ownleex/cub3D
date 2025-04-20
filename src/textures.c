@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:34:04 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/16 18:48:45 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/20 17:59:18 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,25 @@ int	get_tex_pixel(t_texture *texture, int x, int y)
 
 	if (x < 0 || y < 0 || x >= texture->width || y >= texture->height)
 		return (0);
-	dst = texture->addr + (y * texture->line_length + x * (texture->bits_per_pixel / 8));
-	return (*(unsigned int*)dst);
+	dst = texture->addr + \
+(y * texture->line_length + x * (texture->bits_per_pixel / 8));
+	return (*(unsigned int *)dst);
 }
 
 t_texture	*select_texture(t_game *game, t_ray *ray)
 {
-	// Select texture based on the wall direction
-	if (ray->side == 0) // X-side hit
+	if (ray->side == 0)
 	{
-		if (ray->step.x < 0) // Ray is looking west (negative x)
+		if (ray->step.x < 0)
 			return (&game->tex.west);
-		else // Ray is looking east (positive x)
+		else
 			return (&game->tex.east);
 	}
-	else // Y-side hit
+	else
 	{
-		if (ray->step.y < 0) // Ray is looking north (negative y)
+		if (ray->step.y < 0)
 			return (&game->tex.north);
-		else // Ray is looking south (positive y)
+		else
 			return (&game->tex.south);
 	}
 }

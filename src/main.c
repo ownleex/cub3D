@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:29:49 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/16 18:47:49 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/20 19:02:26 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,24 +72,24 @@ int	main(int argc, char **argv)
 	ft_memset(&game, 0, sizeof(t_game));
 	if (argc != 2)
 	{
-		ft_printf("Error\nUsage: ./cub3D <map.cub>\n");
+		printf("Error\nUsage: ./cub3D <map.cub>\n");
 		return (EXIT_FAILURE);
 	}
 	if (!is_valid_ext(argv[1], ".cub"))
 	{
-		ft_printf("Error\nInvalid file extension. Expected .cub\n");
+		printf("Error\nInvalid file extension. Expected .cub\n");
 		return (EXIT_FAILURE);
 	}
 	if (!init_mlx(&game))
 	{
-		ft_printf("Error\nFailed to initialize MLX\n");
+		printf("Error\nFailed to initialize MLX\n");
 		clean_exit(&game, EXIT_FAILURE);
 	}
 	if (!parse_file(&game, argv[1]))
 		clean_exit(&game, EXIT_FAILURE);
 	if (!init_player(&game))
 	{
-		ft_printf("Error\nFailed to initialize player\n");
+		printf("Error\nFailed to initialize player\n");
 		clean_exit(&game, EXIT_FAILURE);
 	}
 	mlx_hook(game.win, 2, 1L << 0, key_press, &game);

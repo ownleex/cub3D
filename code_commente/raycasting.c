@@ -103,11 +103,9 @@ void	perform_dda(t_game *game, t_ray *ray)
 	// Calculer la distance projetée sur la direction de la caméra
 	// pour éviter l'effet "fisheye"
 	if (ray->side == 0)
-		ray->perp_wall_dist = (ray->map_x - game->player.pos.x + 
-							(1 - ray->step.x) / 2) / ray->dir.x;
+		ray->perp_wall_dist = (ray->map_x - game->player.pos.x + (1 - ray->step.x) / 2) / ray->dir.x;
 	else
-		ray->perp_wall_dist = (ray->map_y - game->player.pos.y + 
-							(1 - ray->step.y) / 2) / ray->dir.y;
+		ray->perp_wall_dist = (ray->map_y - game->player.pos.y + (1 - ray->step.y) / 2) / ray->dir.y;
 }
 
 /*
@@ -172,7 +170,8 @@ void	raycasting(t_game *game)
 	int	x;
 	
 	// Pour chaque colonne de l'écran
-	for (x = 0; x < WINDOW_WIDTH; x++)
+	x = 0; 
+	while (x < WINDOW_WIDTH)
 	{
 		// Calculer la position et la direction du rayon
 		calculate_ray_pos_dir(game, &game->ray, x);
@@ -191,5 +190,7 @@ void	raycasting(t_game *game)
 		
 		// Dessiner la colonne
 		draw_vertical_line(game, x, &game->ray);
+
+		x++;
 	}
 }

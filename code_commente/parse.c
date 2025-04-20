@@ -43,7 +43,8 @@ bool load_file_content(t_game *game, int fd)
         return (false);
     
     // Lire le fichier ligne par ligne
-    while ((line = get_next_line(fd)) != NULL)
+    line = get_next_line(fd);
+    while (line)
     {
         // Sauvegarder l'ancien contenu
         temp = content;
@@ -56,6 +57,7 @@ bool load_file_content(t_game *game, int fd)
         // Vérifier que la concaténation a réussi
         if (!content)
             return (false);
+        line = get_next_line(fd);
     }
     
     // Diviser le contenu en tableau de lignes

@@ -90,21 +90,21 @@ int	main(int argc, char **argv)
 	// Vérifie que le programme a été lancé avec le bon nombre d'arguments
 	if (argc != 2)
 	{
-		ft_printf("Error\nUsage: ./cub3D <map.cub>\n");
+		printf("Error\nUsage: ./cub3D <map.cub>\n");
 		return (EXIT_FAILURE);
 	}
 	
 	// Vérifie que le fichier fourni a bien l'extension .cub
 	if (!is_valid_ext(argv[1], ".cub"))
 	{
-		ft_printf("Error\nInvalid file extension. Expected .cub\n");
+		printf("Error\nInvalid file extension. Expected .cub\n");
 		return (EXIT_FAILURE);
 	}
 	
 	// Initialise la bibliothèque MLX et crée la fenêtre
 	if (!init_mlx(&game))
 	{
-		ft_printf("Error\nFailed to initialize MLX\n");
+		printf("Error\nFailed to initialize MLX\n");
 		clean_exit(&game, EXIT_FAILURE);
 	}
 	
@@ -115,7 +115,7 @@ int	main(int argc, char **argv)
 	// Initialise les données du joueur (position, direction)
 	if (!init_player(&game))
 	{
-		ft_printf("Error\nFailed to initialize player\n");
+		printf("Error\nFailed to initialize player\n");
 		clean_exit(&game, EXIT_FAILURE);
 	}
 	

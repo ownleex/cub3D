@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:34:22 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/17 17:18:18 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/20 19:01:56 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	move_forward(t_game *game)
 	if (game->map[map_y][map_x] == '1')
 	{
 		if (is_exterior_wall(game, map_x, map_y))
-			return;
+			return ;
 	}
 	game->player.pos.x = new_x;
 	game->player.pos.y = new_y;
@@ -61,7 +61,7 @@ void	move_backward(t_game *game)
 	if (game->map[map_y][map_x] == '1')
 	{
 		if (is_exterior_wall(game, map_x, map_y))
-			return;
+			return ;
 	}
 	game->player.pos.x = new_x;
 	game->player.pos.y = new_y;
@@ -81,7 +81,7 @@ void	move_left(t_game *game)
 	if (game->map[map_y][map_x] == '1')
 	{
 		if (is_exterior_wall(game, map_x, map_y))
-			return;
+			return ;
 	}
 	game->player.pos.x = new_x;
 	game->player.pos.y = new_y;
@@ -101,7 +101,7 @@ void	move_right(t_game *game)
 	if (game->map[map_y][map_x] == '1')
 	{
 		if (is_exterior_wall(game, map_x, map_y))
-			return;
+			return ;
 	}
 	game->player.pos.x = new_x;
 	game->player.pos.y = new_y;

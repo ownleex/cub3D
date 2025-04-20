@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:34:43 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/20 17:08:42 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/20 17:55:09 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ bool	is_valid_ext(char *file, char *ext)
 		return (false);
 	file_len = ft_strlen(file);
 	ext_len = ft_strlen(ext);
-	
 	if (file_len <= ext_len)
 		return (false);
 	return (ft_strncmp(file + file_len - ext_len, ext, ext_len + 1) == 0);

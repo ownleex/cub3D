@@ -31,13 +31,15 @@
 # define ROT_SPEED 0.01
 
 /* Structure pour représenter un vecteur 2D avec des coordonnées en virgule flottante */
-typedef struct s_vector {
+typedef struct s_vector
+{
 	double	x;              /* Composante x du vecteur */
 	double	y;              /* Composante y du vecteur */
 }	t_vector;
 
 /* Structure pour gérer une texture */
-typedef struct s_texture {
+typedef struct s_texture
+{
 	void	*img;           /* Pointeur vers l'image MLX */
 	char	*addr;          /* Adresse des données de l'image */
 	int		bits_per_pixel; /* Nombre de bits par pixel */
@@ -48,7 +50,8 @@ typedef struct s_texture {
 }	t_texture;
 
 /* Structure regroupant toutes les textures du jeu */
-typedef struct s_tex {
+typedef struct s_tex
+{
 	t_texture	north;      /* Texture du mur orienté vers le nord */
 	t_texture	south;      /* Texture du mur orienté vers le sud */
 	t_texture	east;       /* Texture du mur orienté vers l'est */
@@ -58,7 +61,8 @@ typedef struct s_tex {
 }	t_tex;
 
 /* Structure contenant les informations d'un rayon lors du raycasting */
-typedef struct s_ray {
+typedef struct s_ray
+{
 	t_vector	dir;        /* Direction du rayon */
 	t_vector	delta_dist; /* Distance entre les intersections avec les lignes x ou y */
 	t_vector	side_dist;  /* Distance jusqu'à la prochaine intersection avec une ligne x ou y depuis la position actuelle */
@@ -75,14 +79,16 @@ typedef struct s_ray {
 }	t_ray;
 
 /* Structure représentant le joueur */
-typedef struct s_player {
+typedef struct s_player
+{
 	t_vector	pos;        /* Position du joueur sur la carte */
 	t_vector	dir;        /* Direction dans laquelle regarde le joueur */
 	t_vector	plane;      /* Plan de la caméra (perpendiculaire à la direction) */
 }	t_player;
 
 /* Structure principale du jeu contenant toutes les informations */
-typedef struct s_game {
+typedef struct s_game
+{
 	void		*mlx;       /* Pointeur pour la MLX */
 	void		*win;       /* Pointeur vers la fenêtre MLX */
 	void		*img;       /* Pointeur vers l'image principale */
@@ -154,7 +160,7 @@ void	clean_exit(t_game *game, int status);
 int		exit_hook(t_game *game);
 void	free_textures(t_game *game);
 
-/* hooks.c */
+/* hooks in main.c */
 int		key_press(int keycode, t_game *game);
 int		key_release(int keycode, t_game *game);
 int		update_game(t_game *game);

@@ -34,12 +34,20 @@ void	draw_ceiling_floor(t_game *game, int x, t_ray *ray)
 	int	y;
 
 	// Dessiner le plafond (de haut en bas jusqu'au début du mur)
-	for (y = 0; y < ray->draw_start; y++)
+	y = 0;
+	while (y < ray->draw_start)
+	{
 		put_pixel_to_img(game, x, y, game->tex.ceiling);
+		y++;
+	}
 	
 	// Dessiner le sol (de la fin du mur jusqu'en bas de l'écran)
-	for (y = ray->draw_end + 1; y < WINDOW_HEIGHT; y++)
+	y = ray->draw_end + 1;
+	while (y < WINDOW_HEIGHT)
+	{
 		put_pixel_to_img(game, x, y, game->tex.floor);
+		y++;
+	}
 }
 
 /*

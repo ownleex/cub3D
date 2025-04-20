@@ -18,7 +18,7 @@ bool	load_texture(t_game *game, t_texture *texture, char *path)
 	texture->img = mlx_xpm_file_to_image(game->mlx, path, &texture->width, &texture->height);
 	if (!texture->img)
 	{
-		ft_printf("Error\nImpossible de charger la texture: %s\n", path);
+		printf("Error\nImpossible de charger la texture: %s\n", path);
 		return (false);
 	}
 	
@@ -29,7 +29,7 @@ bool	load_texture(t_game *game, t_texture *texture, char *path)
 	// Vérifier que la texture est exactement de 64x64 pixels
 	if (texture->width != 64 || texture->height != 64)
 	{
-		ft_printf("Error\nLa texture %s n'est pas de 64x64 pixels (dimensions actuelles: %dx%d)\n", 
+		printf("Error\nLa texture %s n'est pas de 64x64 pixels (dimensions actuelles: %dx%d)\n", 
 			path, texture->width, texture->height);
 		// Libérer la texture déjà chargée pour éviter les fuites mémoire
 		mlx_destroy_image(game->mlx, texture->img);
@@ -112,7 +112,7 @@ bool	parse_color(t_game *game, char *line, char type)
 	// Analyser les valeurs RGB
 	if (!parse_color_value(value, rgb))
 	{
-		ft_printf("Error\nFormat de couleur invalide: %s\n", line);
+		printf("Error\nFormat de couleur invalide: %s\n", line);
 		return (false);
 	}
 	
@@ -162,8 +162,7 @@ bool	parse_texture_line(t_game *game, char *line)
 bool	check_textures_loaded(t_game *game)
 {
 	// Vérifier que toutes les textures des murs sont chargées
-	if (!game->tex.north.img || !game->tex.south.img ||
-		!game->tex.east.img || !game->tex.west.img)
+	if (!game->tex.north.img || !game->tex.south.img || !game->tex.east.img || !game->tex.west.img)
 		return (false);
 	return (true);
 }

@@ -93,11 +93,13 @@ int	get_map_width(t_game *game, int start, int height)
 	int	line_width;
 
 	max_width = 0;
-	for (i = start; i < start + height; i++)
+	i = start; 
+	while (i < start + height)
 	{
 		line_width = ft_strlen(game->file[i]);
 		if (line_width > max_width)
 			max_width = line_width;
+		i++;
 	}
 	return (max_width);
 }
@@ -120,7 +122,8 @@ bool	extract_map(t_game *game, int start, int height, int width)
 	if (!game->map)
 		return (false);
 	
-	for (i = 0; i < height; i++)
+	i = 0; 
+	while (i < height)
 	{
 		// Allouer de la mémoire pour chaque ligne
 		game->map[i] = (char *)malloc(sizeof(char) * (width + 1));
@@ -128,14 +131,17 @@ bool	extract_map(t_game *game, int start, int height, int width)
 			return (false);
 		
 		// Copier la ligne et compléter avec des espaces
-		for (j = 0; j < width; j++)
+		j = 0; 
+		while (j < width)
 		{
 			if (j < (int)ft_strlen(game->file[start + i]))
 				game->map[i][j] = game->file[start + i][j];
 			else
 				game->map[i][j] = ' ';
+			j++;
 		}
 		game->map[i][width] = '\0';
+		i++;
 	}
 	// Terminer le tableau par NULL
 	game->map[height] = NULL;
@@ -202,9 +208,11 @@ bool	find_player(t_game *game)
 	int	player_count;
 
 	player_count = 0;
-	for (y = 0; y < game->map_height; y++)
+	y = 0; 
+	while (y < game->map_height)
 	{
-		for (x = 0; x < game->map_width; x++)
+		x = 0; 
+		while (x < game->map_width)
 		{
 			if (game->map[y][x] == 'N' || game->map[y][x] == 'S' ||
 				game->map[y][x] == 'E' || game->map[y][x] == 'W')
@@ -214,7 +222,9 @@ bool	find_player(t_game *game)
 				set_player_position(game, x, y, game->map[y][x]);
 				player_count++;
 			}
+			x++;
 		}
+		y++;
 	}
 	return (player_count == 1);
 }
@@ -230,7 +240,8 @@ bool	check_map_borders(t_game *game)
 	int	y;
 
 	// Vérifier les bordures horizontales
-	for (y = 0; y < game->map_height; y++)
+	y = 0; 
+	while (y < game->map_height)
 	{
 		// Trouver le premier caractère non-espace depuis la gauche
 		x = 0;
@@ -245,10 +256,12 @@ bool	check_map_borders(t_game *game)
 			x--;
 		if (x >= 0 && game->map[y][x] != '1')
 			return (false);
+		y++;
 	}
 	
 	// Vérifier les bordures verticales
-	for (x = 0; x < game->map_width; x++)
+	x = 0; 
+	while (x < game->map_width)
 	{
 		// Trouver le premier caractère non-espace depuis le haut
 		y = 0;
@@ -263,6 +276,7 @@ bool	check_map_borders(t_game *game)
 			y--;
 		if (y >= 0 && game->map[y][x] != '1')
 			return (false);
+		x++;
 	}
 	
 	return (true);
@@ -278,9 +292,11 @@ bool	check_map_closed(t_game *game)
 	int	x;
 	int	y;
 
-	for (y = 0; y < game->map_height; y++)
+	y = 0; 
+	while (y < game->map_height)
 	{
-		for (x = 0; x < game->map_width; x++)
+		x = 0; 
+		while (x < game->map_width)
 		{
 			if (game->map[y][x] == '0')
 			{
@@ -294,7 +310,9 @@ bool	check_map_closed(t_game *game)
 					game->map[y][x-1] == ' ' || game->map[y][x+1] == ' ')
 					return (false);
 			}
+			x++;
 		}
+		y++;
 	}
 	return (true);
 }
@@ -309,16 +327,20 @@ bool	check_map_chars(t_game *game)
 	int	x;
 	int	y;
 
-	for (y = 0; y < game->map_height; y++)
+	y = 0; 
+	while (y < game->map_height)
 	{
-		for (x = 0; x < game->map_width; x++)
+		x = 0; 
+		while (x < game->map_width)
 		{
 			if (game->map[y][x] != '0' && game->map[y][x] != '1' &&
 				game->map[y][x] != 'N' && game->map[y][x] != 'S' &&
 				game->map[y][x] != 'E' && game->map[y][x] != 'W' &&
 				game->map[y][x] != ' ')
 				return (false);
+			x++;
 		}
+		y++;
 	}
 	return (true);
 }

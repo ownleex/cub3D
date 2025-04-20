@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:23:48 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/20 17:44:41 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/20 17:53:31 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,14 @@
 # define MOVE_SPEED 0.01
 # define ROT_SPEED 0.01
 
-typedef struct s_vector {
+typedef struct s_vector
+{
 	double	x;
 	double	y;
 }	t_vector;
 
-typedef struct s_texture {
+typedef struct s_texture
+{
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
@@ -56,16 +58,18 @@ typedef struct s_texture {
 	int		height;
 }	t_texture;
 
-typedef struct s_tex {
+typedef struct s_tex
+{
 	t_texture	north;
 	t_texture	south;
 	t_texture	east;
 	t_texture	west;
-	int		floor;
-	int		ceiling;
+	int			floor;
+	int			ceiling;
 }	t_tex;
 
-typedef struct s_ray {
+typedef struct s_ray
+{
 	t_vector	dir;
 	t_vector	delta_dist;
 	t_vector	side_dist;
@@ -81,13 +85,15 @@ typedef struct s_ray {
 	int			draw_end;
 }	t_ray;
 
-typedef struct s_player {
+typedef struct s_player
+{
 	t_vector	pos;
 	t_vector	dir;
 	t_vector	plane;
 }	t_player;
 
-typedef struct s_game {
+typedef struct s_game
+{
 	void		*mlx;
 	void		*win;
 	void		*img;
@@ -103,65 +109,65 @@ typedef struct s_game {
 	int			map_width;
 	int			map_height;
 	bool		textures_loaded;
-	int			keys[128]; // Tableau pour les touches standard
-	int			key_left; // État de la flèche gauche
-	int			key_right; // État de la flèche droite
+	int			keys[128];
+	int			key_left;
+	int			key_right;
 }	t_game;
 
 /* init.c */
-bool	init_mlx(t_game *game);
-bool	init_player(t_game *game);
+bool		init_mlx(t_game *game);
+bool		init_player(t_game *game);
 
 /* parse.c */
-bool	parse_file(t_game *game, char *file_path);
-int		open_file(char *file_path);
-bool	load_file_content(t_game *game, int fd);
+bool		parse_file(t_game *game, char *file_path);
+int			open_file(char *file_path);
+bool		load_file_content(t_game *game, int fd);
 
 /* parse_map.c */
-bool	parse_map(t_game *game);
-bool	validate_map(t_game *game);
-bool	check_map_chars(t_game *game);
-bool	check_map_borders(t_game *game);
-bool	set_player_position(t_game *game, int x, int y, char dir);
+bool		parse_map(t_game *game);
+bool		validate_map(t_game *game);
+bool		check_map_chars(t_game *game);
+bool		check_map_borders(t_game *game);
+bool		set_player_position(t_game *game, int x, int y, char dir);
 
 /* parse_texture.c */
-bool	parse_textures(t_game *game);
-bool	load_texture(t_game *game, t_texture *texture, char *path);
-bool	parse_color(t_game *game, char *line, char type);
+bool		parse_textures(t_game *game);
+bool		load_texture(t_game *game, t_texture *texture, char *path);
+bool		parse_color(t_game *game, char *line, char type);
 
 /* raycasting.c */
-void	raycasting(t_game *game);
-void	calculate_ray_pos_dir(t_game *game, t_ray *ray, int x);
-void	perform_dda(t_game *game, t_ray *ray);
+void		raycasting(t_game *game);
+void		calculate_ray_pos_dir(t_game *game, t_ray *ray, int x);
+void		perform_dda(t_game *game, t_ray *ray);
 
 /* render.c */
-int		render(t_game *game);
-void	draw_vertical_line(t_game *game, int x, t_ray *ray);
-void	put_pixel_to_img(t_game *game, int x, int y, int color);
+int			render(t_game *game);
+void		draw_vertical_line(t_game *game, int x, t_ray *ray);
+void		put_pixel_to_img(t_game *game, int x, int y, int color);
 
 /* textures.c */
-int		get_tex_pixel(t_texture *texture, int x, int y);
+int			get_tex_pixel(t_texture *texture, int x, int y);
 t_texture	*select_texture(t_game *game, t_ray *ray);
 
 /* move.c */
-void	move_forward(t_game *game);
-void	move_backward(t_game *game);
-void	move_left(t_game *game);
-void	move_right(t_game *game);
-void	rotate(t_game *game, double angle);
+void		move_forward(t_game *game);
+void		move_backward(t_game *game);
+void		move_left(t_game *game);
+void		move_right(t_game *game);
+void		rotate(t_game *game, double angle);
 
 /* utils.c */
-bool	is_valid_ext(char *file, char *ext);
-int		create_rgb(int r, int g, int b);
+bool		is_valid_ext(char *file, char *ext);
+int			create_rgb(int r, int g, int b);
 
 /* exit.c */
-void	clean_exit(t_game *game, int status);
-int		exit_hook(t_game *game);
-void	free_textures(t_game *game);
+void		clean_exit(t_game *game, int status);
+int			exit_hook(t_game *game);
+void		free_textures(t_game *game);
 
-/* hooks.c */
-int		key_press(int keycode, t_game *game);
-int		key_release(int keycode, t_game *game);
-int		update_game(t_game *game);
+/* hooks in main.c */
+int			key_press(int keycode, t_game *game);
+int			key_release(int keycode, t_game *game);
+int			update_game(t_game *game);
 
 #endif
