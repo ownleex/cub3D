@@ -155,8 +155,7 @@ void	calculate_texture_x(t_game *game, t_ray *ray)
 	ray->tex_x = (int)(wall_x * (double)TEXTURE_WIDTH);
 	
 	// Inverser la texture si le rayon touche le mur de "l'intérieur"
-	if ((ray->side == 0 && ray->dir.x > 0) || 
-		(ray->side == 1 && ray->dir.y < 0))
+	if ((ray->side == 0 && ray->dir.x > 0) || (ray->side == 1 && ray->dir.y < 0))
 		ray->tex_x = TEXTURE_WIDTH - ray->tex_x - 1;
 }
 
