@@ -6,7 +6,7 @@
 #    By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/13 23:22:13 by ayarmaya          #+#    #+#              #
-#    Updated: 2025/04/23 00:24:46 by ayarmaya         ###   ########.fr        #
+#    Updated: 2025/04/23 01:23:30 by ayarmaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,9 +68,8 @@ BONUS_SRCS   = $(BONUS_SRCDIR)/main_bonus.c \
 		       $(BONUS_SRCDIR)/free_bonus.c \
 	 		   $(BONUS_SRCDIR)/dda_bonus.c
 
-BONUS_OBJS   = $(patsubst $(BONUS_SRCDIR)/%.c, $(OBJDIR)/%.o, $(BONUS_SRCS))
-
-.PHONY: all bonus clean fclean re
+BONUS_OBJDIR      = obj/bonus
+BONUS_OBJS   = $(patsubst $(BONUS_SRCDIR)/%.c, $(BONUS_OBJDIR)/%.o, $(BONUS_SRCS))
 
 all: $(NAME)
 
@@ -79,7 +78,9 @@ $(NAME): $(OBJS)
 	@make -C mlx_linux
 	$(CC) $(OBJS) $(LIBFT) $(MLX) $(MLX_FLAGS) -o $(NAME)
 
-bonus: $(BONUS_OBJS)
+bonus: $(BONUS_NAME)
+
+$(BONUS_NAME): $(BONUS_OBJS)
 	@make -C libft
 	@make -C mlx_linux
 	$(CC) $(BONUS_OBJS) $(LIBFT) $(MLX) $(MLX_FLAGS) -o $(BONUS_NAME)
@@ -88,7 +89,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) $(HEADERS) -c $< -o $@
 
-$(OBJDIR)/%.o: $(BONUS_SRCDIR)/%.c
+$(BONUS_OBJDIR)/%.o: $(BONUS_SRCDIR)/%.c
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) $(HEADERS) -c $< -o $@
 
@@ -102,3 +103,5 @@ fclean: clean
 	@make -C libft fclean
 
 re: fclean all
+
+.PHONY: all bonus clean fclean re
