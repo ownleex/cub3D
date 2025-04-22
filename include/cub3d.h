@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:23:48 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/22 23:23:25 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/22 23:38:26 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,12 @@ typedef struct s_game
 bool		init_mlx(t_game *game);
 bool		init_player(t_game *game);
 
+/* parse.c */
+bool		parse_file(t_game *game, char *file_path);
+int			open_file(char *file_path);
+bool		load_file_content(t_game *game, int fd);
+t_game		parsing(t_game game, char *argv);
+
 /* parse_map_1.c */
 bool		get_map_params(t_game *game, int *start, int *height, int *width);
 bool		parse_map(t_game *game);
@@ -136,13 +142,6 @@ void		set_ew_direction(t_player *player, char dir);
 bool		set_player_position(t_game *game, int x, int y, char dir);
 bool		find_player(t_game *game);
 bool		check_map_borders(t_game *game);
-
-/* parse_map.c */
-bool		parse_map(t_game *game);
-bool		validate_map(t_game *game);
-bool		check_map_chars(t_game *game);
-bool		check_map_borders(t_game *game);
-bool		set_player_position(t_game *game, int x, int y, char dir);
 
 /* parse_texture.c */
 bool		parse_textures(t_game *game);
