@@ -80,18 +80,7 @@ int	main(int argc, char **argv)
 		printf("Error\nInvalid file extension. Expected .cub\n");
 		return (EXIT_FAILURE);
 	}
-	if (!init_mlx(&game))
-	{
-		printf("Error\nFailed to initialize MLX\n");
-		clean_exit(&game, EXIT_FAILURE);
-	}
-	if (!parse_file(&game, argv[1]))
-		clean_exit(&game, EXIT_FAILURE);
-	if (!init_player(&game))
-	{
-		printf("Error\nFailed to initialize player\n");
-		clean_exit(&game, EXIT_FAILURE);
-	}
+	game = parsing(game, argv[1]);
 	mlx_hook(game.win, 2, 1L << 0, key_press, &game);
 	mlx_hook(game.win, 3, 1L << 1, key_release, &game);
 	mlx_hook(game.win, 17, 0, exit_hook, &game);

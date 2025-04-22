@@ -35,8 +35,8 @@
 # define KEY_LEFT 65361
 # define KEY_RIGHT 65363
 
-# define MOVE_SPEED 0.005
-# define ROT_SPEED 0.005
+# define MOVE_SPEED 0.025
+# define ROT_SPEED 0.02
 
 typedef struct s_vector
 {
@@ -117,6 +117,7 @@ bool		init_player(t_game *game);
 bool		parse_file(t_game *game, char *file_path);
 int			open_file(char *file_path);
 bool		load_file_content(t_game *game, int fd);
+t_game 		parsing(t_game game, char *argv);
 
 /* parse_map.c */
 bool		parse_map(t_game *game);
@@ -164,5 +165,8 @@ void		free_textures(t_game *game);
 int			key_press(int keycode, t_game *game);
 int			key_release(int keycode, t_game *game);
 int			update_game(t_game *game);
+
+/* wall.c */
+bool		is_exterior_wall(t_game *game, int x, int y);
 
 #endif
