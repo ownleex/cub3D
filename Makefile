@@ -34,7 +34,8 @@ SRCS = $(SRCDIR)/main.c \
 	   $(SRCDIR)/textures.c \
 	   $(SRCDIR)/move.c \
 	   $(SRCDIR)/utils.c \
-	   $(SRCDIR)/exit.c
+	   $(SRCDIR)/exit.c	\
+	   $(SRCDIR)/wall.c 
 
 OBJDIR = obj
 OBJS = $(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SRCS))

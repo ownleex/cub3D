@@ -166,4 +166,7 @@ int			key_press(int keycode, t_game *game);
 int			key_release(int keycode, t_game *game);
 int			update_game(t_game *game);
 
+/* wall.c */
+bool		is_exterior_wall(t_game *game, int x, int y);
+
 #endif
