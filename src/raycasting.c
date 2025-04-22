@@ -49,48 +49,6 @@ void	calculate_step_and_side_dist(t_game *game, t_ray *ray)
 	}
 }
 
-void	perform_dda(t_game *game, t_ray *ray)
-{
-	bool	hit;
-
-	hit = false;
-	if (game->map[ray->map_y][ray->map_x] == '1')
-	{
-		if (ray->side_dist.x < ray->side_dist.y)
-		{
-			ray->side  = 0;
-			ray->perp_wall_dist = ray->side_dist.x;
-		}
-		else
-		{
-			ray->side  = 1;
-			ray->perp_wall_dist = ray->side_dist.y;
-		}
-		return ;
-	}
-	while (!hit)
-	{
-		if (ray->side_dist.x < ray->side_dist.y)
-		{
-			ray->side_dist.x += ray->delta_dist.x;
-			ray->map_x += ray->step.x;
-			ray->side = 0;
-		}
-		else
-		{
-			ray->side_dist.y += ray->delta_dist.y;
-			ray->map_y += ray->step.y;
-			ray->side = 1;
-		}
-		if (game->map[ray->map_y][ray->map_x] == '1')
-			hit = true;
-	}
-	if (ray->side == 0)
-		ray->perp_wall_dist = (ray->map_x - game->player.pos.x + (1 - ray->step.x) / 2) / ray->dir.x;
-	else
-		ray->perp_wall_dist = (ray->map_y - game->player.pos.y + (1 - ray->step.y) / 2) / ray->dir.y;
-}
-
 void	calculate_wall_height(t_ray *ray)
 {
 	if (ray->perp_wall_dist < 0.000001)
