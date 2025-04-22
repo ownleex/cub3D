@@ -6,7 +6,7 @@
 #    By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/13 23:22:13 by ayarmaya          #+#    #+#              #
-#    Updated: 2025/04/13 23:48:27 by ayarmaya         ###   ########.fr        #
+#    Updated: 2025/04/22 23:39:55 by ayarmaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,10 @@ SRCDIR = src
 SRCS = $(SRCDIR)/main.c \
 	   $(SRCDIR)/init.c \
 	   $(SRCDIR)/parse.c \
-	   $(SRCDIR)/parse_map.c \
+	   $(SRCDIR)/parse_map_1.c \
+	   $(SRCDIR)/parse_map_2.c \
+	   $(SRCDIR)/parse_map_3.c \
+	   $(SRCDIR)/parse_map_4.c \
 	   $(SRCDIR)/parse_texture.c \
 	   $(SRCDIR)/raycasting.c \
 	   $(SRCDIR)/render.c \
