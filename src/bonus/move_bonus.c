@@ -6,11 +6,11 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 18:30:40 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/16 18:47:27 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/22 21:29:58 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "cub3d_bonus.h"
 
 void	move_forward(t_game *game)
 {
@@ -70,9 +70,13 @@ void	rotate(t_game *game, double angle)
 	double	old_plane_x;
 
 	old_dir_x = game->player.dir.x;
-	game->player.dir.x = game->player.dir.x * cos(angle) - game->player.dir.y * sin(angle);
-	game->player.dir.y = old_dir_x * sin(angle) + game->player.dir.y * cos(angle);
+	game->player.dir.x = game->player.dir.x * cos(angle) - \
+game->player.dir.y * sin(angle);
+	game->player.dir.y = old_dir_x * sin(angle) + \
+game->player.dir.y * cos(angle);
 	old_plane_x = game->player.plane.x;
-	game->player.plane.x = game->player.plane.x * cos(angle) - game->player.plane.y * sin(angle);
-	game->player.plane.y = old_plane_x * sin(angle) + game->player.plane.y * cos(angle);
+	game->player.plane.x = game->player.plane.x * cos(angle) - \
+game->player.plane.y * sin(angle);
+	game->player.plane.y = old_plane_x * sin(angle) + \
+game->player.plane.y * cos(angle);
 }
