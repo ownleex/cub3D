@@ -73,3 +73,20 @@ bool	parse_file(t_game *game, char *file_path)
 		return (false);
 	return (true);
 }
+
+t_game parsing(t_game game, char *argv)
+{
+	if (!init_mlx(&game))
+	{
+		printf("Error\nFailed to initialize MLX\n");
+		clean_exit(&game, EXIT_FAILURE);
+	}
+	if (!parse_file(&game, argv))
+		clean_exit(&game, EXIT_FAILURE);
+	if (!init_player(&game))
+	{
+		printf("Error\nFailed to initialize player\n");
+		clean_exit(&game, EXIT_FAILURE);
+	}
+	return (game);
+}
