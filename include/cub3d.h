@@ -134,7 +134,6 @@ bool		parse_color(t_game *game, char *line, char type);
 /* raycasting.c */
 void		raycasting(t_game *game);
 void		calculate_ray_pos_dir(t_game *game, t_ray *ray, int x);
-void		perform_dda(t_game *game, t_ray *ray);
 
 /* render.c */
 int			render(t_game *game);
@@ -171,5 +170,8 @@ bool		is_exterior_wall(t_game *game, int x, int y);
 
 /* free.c */
 void		free_file(t_game *game);
+
+/* dda.c */
+void		perform_dda(t_game *game, t_ray *ray);
 
 #endif
