@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_bonus.c                                       :+:      :+:    :+:   */
+/*   wall.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 18:30:40 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/16 18:47:27 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/23 00:06:15 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 bool	is_exterior_wall(t_game *game, int x, int y)
 {
-	if (x == 0 || y == 0 || x == game->map_width - 1 || y == game->map_height - 1)
+	if (x == 0 || y == 0 || x == game->map_width - 1 || \
+y == game->map_height - 1)
 		return (true);
 	if (x > 0 && game->map[y][x - 1] == ' ')
 		return (true);

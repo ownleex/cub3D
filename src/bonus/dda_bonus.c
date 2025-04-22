@@ -6,36 +6,17 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:35:02 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/22 23:30:54 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/23 00:07:59 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d_bonus.h"
 
-static bool	hit_check(t_game *game, t_ray *ray)
-{
-	if (game->map[ray->map_y][ray->map_x] == '1')
-	{
-		if (ray->side_dist.x < ray->side_dist.y)
-		{
-			ray->side = 0;
-			ray->perp_wall_dist = ray->side_dist.x;
-		}
-		else
-		{
-			ray->side = 1;
-			ray->perp_wall_dist = ray->side_dist.y;
-		}
-		return (true);
-	}
-	return (false);
-}
-
 static void	run_dda(t_game *game, t_ray *ray)
 {
-	bool hit;
+	bool	hit;
 
-    hit = false;
+	hit = false;
 	while (!hit)
 	{
 		if (ray->side_dist.x < ray->side_dist.y)
@@ -67,8 +48,6 @@ static void	wall_distance(t_game *game, t_ray *ray)
 
 void	perform_dda(t_game *game, t_ray *ray)
 {
-	if (hit_check(game, ray))
-		return ;
 	run_dda(game, ray);
 	wall_distance(game, ray);
 }

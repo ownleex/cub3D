@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit.c                                             :+:      :+:    :+:   */
+/*   dda.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:35:02 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/20 19:04:00 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/22 23:58:32 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ static bool	hit_check(t_game *game, t_ray *ray)
 
 static void	run_dda(t_game *game, t_ray *ray)
 {
-	bool hit;
+	bool	hit;
 
-    hit = false;
+	hit = false;
 	while (!hit)
 	{
 		if (ray->side_dist.x < ray->side_dist.y)
