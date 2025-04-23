@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:33:28 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/23 00:48:43 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/23 15:22:12 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ int	render(t_game *game)
 	ft_memset(game->img_addr, 0, WINDOW_WIDTH * WINDOW_HEIGHT * \
 (game->img_bits_per_pixel / 8));
 	raycasting(game);
+	draw_minimap(game);
 	mlx_put_image_to_window(game->mlx, game->win, game->img, 0, 0);
 	return (0);
 }

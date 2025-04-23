@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 21:30:45 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/23 01:01:22 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/23 15:21:50 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,5 +186,7 @@ void		free_file(t_game *game);
 
 /* dda.c */
 void		perform_dda(t_game *game, t_ray *ray);
+
+void	draw_minimap(t_game *game);
 
 #endif
