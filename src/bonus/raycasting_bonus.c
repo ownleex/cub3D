@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:33:11 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/22 23:31:46 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/23 00:14:56 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,22 +30,26 @@ void	calculate_step_and_side_dist(t_game *game, t_ray *ray)
 	if (ray->dir.x < 0)
 	{
 		ray->step.x = -1;
-		ray->side_dist.x = (game->player.pos.x - ray->map_x) * ray->delta_dist.x;
+		ray->side_dist.x = (game->player.pos.x - ray->map_x) * \
+ray->delta_dist.x;
 	}
 	else
 	{
 		ray->step.x = 1;
-		ray->side_dist.x = (ray->map_x + 1.0 - game->player.pos.x) * ray->delta_dist.x;
+		ray->side_dist.x = (ray->map_x + 1.0 - game->player.pos.x) * \
+ray->delta_dist.x;
 	}
 	if (ray->dir.y < 0)
 	{
 		ray->step.y = -1;
-		ray->side_dist.y = (game->player.pos.y - ray->map_y) * ray->delta_dist.y;
+		ray->side_dist.y = (game->player.pos.y - ray->map_y) * \
+ray->delta_dist.y;
 	}
 	else
 	{
 		ray->step.y = 1;
-		ray->side_dist.y = (ray->map_y + 1.0 - game->player.pos.y) * ray->delta_dist.y;
+		ray->side_dist.y = (ray->map_y + 1.0 - game->player.pos.y) * \
+ray->delta_dist.y;
 	}
 }
 
@@ -72,7 +76,8 @@ void	calculate_texture_x(t_game *game, t_ray *ray)
 		wall_x = game->player.pos.x + ray->perp_wall_dist * ray->dir.x;
 	wall_x -= floor(wall_x);
 	ray->tex_x = (int)(wall_x * (double)TEXTURE_WIDTH);
-	if ((ray->side == 0 && ray->dir.x > 0) || (ray->side == 1 && ray->dir.y < 0))
+	if ((ray->side == 0 && ray->dir.x > 0) || \
+(ray->side == 1 && ray->dir.y < 0))
 		ray->tex_x = TEXTURE_WIDTH - ray->tex_x - 1;
 }
 

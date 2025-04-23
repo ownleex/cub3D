@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:31:34 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/22 23:31:28 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/23 00:16:35 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ bool	parse_file(t_game *game, char *file_path)
 	return (true);
 }
 
-t_game parsing(t_game game, char *argv)
+t_game	parsing(t_game game, char *argv)
 {
 	if (!init_mlx(&game))
 	{

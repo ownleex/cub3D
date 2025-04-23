@@ -6,18 +6,16 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:32:37 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/20 20:50:48 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/23 00:38:10 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-bool	parse_color_value(char *str, int *rgb)
+bool	parse_color_value(char *str, int *rgb, int i)
 {
-	int	i;
 	int	count;
 
-	i = 0;
 	count = 0;
 	while (str[i])
 	{
@@ -51,7 +49,7 @@ bool	parse_color(t_game *game, char *line, char type)
 	value = line + 1;
 	while (*value && (*value == ' ' || *value == '\t'))
 		value++;
-	if (!parse_color_value(value, rgb))
+	if (!parse_color_value(value, rgb, 0))
 	{
 		printf("Error\nInvalid color format: %s\n", line);
 		return (false);
@@ -83,7 +81,8 @@ bool	parse_texture_line(t_game *game, char *line)
 
 bool	check_textures_loaded(t_game *game)
 {
-	if (!game->tex.north.img || !game->tex.south.img || !game->tex.east.img || !game->tex.west.img)
+	if (!game->tex.north.img || !game->tex.south.img || \
+!game->tex.east.img || !game->tex.west.img)
 		return (false);
 	return (true);
 }
