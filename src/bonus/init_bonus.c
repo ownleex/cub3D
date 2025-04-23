@@ -15,7 +15,7 @@
 bool	init_mlx(t_game *game)
 {
 	int	i;
-
+	
 	i = 0;
 	while (i < 128)
 	{

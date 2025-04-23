@@ -22,6 +22,7 @@
 # include <fcntl.h>
 # include <stdio.h>
 
+
 # define WINDOW_WIDTH 1280
 # define WINDOW_HEIGHT 720
 # define TEXTURE_WIDTH 64
@@ -163,6 +164,9 @@ void		move_backward(t_game *game);
 void		move_left(t_game *game);
 void		move_right(t_game *game);
 void		rotate(t_game *game, double angle);
+
+/* mouse_move.c */
+int			mouse_move(int x, int y, t_game *game);
 
 /* utils.c */
 bool		is_valid_ext(char *file, char *ext);
