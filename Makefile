@@ -67,7 +67,9 @@ BONUS_SRCS   = $(BONUS_SRCDIR)/main_bonus.c \
                $(BONUS_SRCDIR)/wall_bonus.c \
 		       $(BONUS_SRCDIR)/free_bonus.c \
 	 		   $(BONUS_SRCDIR)/dda_bonus.c \
-			   $(BONUS_SRCDIR)/minimap_bonus.c
+			   $(BONUS_SRCDIR)/minimap_bonus.c \
+			   $(BONUS_SRCDIR)/mouse_move.c
+
 
 BONUS_OBJDIR      = obj/bonus
 BONUS_OBJS   = $(patsubst $(BONUS_SRCDIR)/%.c, $(BONUS_OBJDIR)/%.o, $(BONUS_SRCS))

@@ -83,6 +83,7 @@ int	main(int argc, char **argv)
 	game = parsing(game, argv[1]);
 	mlx_hook(game.win, 2, 1L << 0, key_press, &game);
 	mlx_hook(game.win, 3, 1L << 1, key_release, &game);
+	mlx_hook(game.win, 6, (1L << 6), mouse_move, &game);
 	mlx_hook(game.win, 17, 0, exit_hook, &game);
 	mlx_loop_hook(game.mlx, update_game, &game);
 	mlx_loop(game.mlx);
