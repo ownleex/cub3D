@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 00:49:26 by ayarmaya          #+#    #+#             */
-/*   Updated: 2024/01/18 05:09:03 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/24 03:43:42 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,3 @@ t_list	*ft_lstnew(void *content)
 	nouveau->next = NULL;
 	return (nouveau);
 }
-
-/*
-int	main(void)
-{
-	char	*str;
-	t_list	*list;
-
-	str = "bonjour";
-	list = ft_lstnew(str);
-	printf("%s\n", (char *)list->content);
-	return (0);
-}
-*/

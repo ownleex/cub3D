@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:31:04 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/22 23:31:07 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/24 17:12:46 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 bool	init_mlx(t_game *game)
 {
 	int	i;
-	
+
 	i = 0;
 	while (i < 128)
 	{
@@ -24,6 +24,7 @@ bool	init_mlx(t_game *game)
 	}
 	game->key_left = 0;
 	game->key_right = 0;
+	game->mouse_captured = 0;
 	game->mlx = mlx_init();
 	if (!game->mlx)
 		return (false);

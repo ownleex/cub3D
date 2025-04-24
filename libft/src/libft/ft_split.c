@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 18:17:41 by ayarmaya          #+#    #+#             */
-/*   Updated: 2024/01/18 05:09:30 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/24 03:45:06 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,20 +102,3 @@ char	**ft_split(char const *s, char c)
 	s2 = ft_split_words(s, c, s2, num_words);
 	return (s2);
 }
-
-/*
-int	main(void)
-{
-	char	**res;
-	int		i;
-
-	i = 0;
-	res = ft_split("la chaine de   caractere a     spliter", ' ');
-	while (res[i] != NULL)
-	{
-		printf("%s\n", res[i]);
-		i++;
-	}
-	return (0);
-}
-*/

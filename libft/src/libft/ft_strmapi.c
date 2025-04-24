@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 17:33:25 by ayarmaya          #+#    #+#             */
-/*   Updated: 2024/01/18 05:09:50 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/24 03:45:51 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	result[i] = 0;
 	return (result);
 }
-
-/*
-char	minuscule(unsigned int i, char c)
-{
-	return c + 32;
-}
-
-int	main()
-{
-	char	*str = "HELLO";
-	char	*result;
-
-	printf("Avant strmapi : %s\n", str);
-	result = ft_strmapi(str, minuscule);
-	printf("Apres strmapi : %s\n", result);
-	free(result);
-	return 0;
-}
-*/

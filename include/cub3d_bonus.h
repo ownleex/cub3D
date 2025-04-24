@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 21:30:45 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/23 15:21:50 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/24 05:45:40 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # include <fcntl.h>
 # include <stdio.h>
 
-
 # define WINDOW_WIDTH 1280
 # define WINDOW_HEIGHT 720
 # define TEXTURE_WIDTH 64
@@ -35,6 +34,7 @@
 # define KEY_D 100
 # define KEY_LEFT 65361
 # define KEY_RIGHT 65363
+# define KEY_TAB 65289
 
 # define MOVE_SPEED 0.025
 # define ROT_SPEED 0.02
@@ -108,6 +108,7 @@ typedef struct s_game
 	int			keys[128];
 	int			key_left;
 	int			key_right;
+	int			mouse_captured;
 }	t_game;
 
 /* init.c */
@@ -191,6 +192,6 @@ void		free_file(t_game *game);
 /* dda.c */
 void		perform_dda(t_game *game, t_ray *ray);
 
-void	draw_minimap(t_game *game);
+void		draw_minimap(t_game *game);
 
 #endif
