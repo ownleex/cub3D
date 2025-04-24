@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 01:56:42 by ayarmaya          #+#    #+#             */
-/*   Updated: 2024/01/18 05:09:45 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/24 03:45:39 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		i++;
 	return (i);
 }
-
-/*
-int	main(void)
-{
-	char	src[] = "bla bla bla";
-	char	dst[255];
-
-	printf("Source : %s\n", src);
-	printf("Valeur renvoyee par ft_strlcpy : %ld\n", ft_strlcpy(dst, src, 9));
-	printf("Destination : %s\n", dst);
-	return (0);
-}
-*/

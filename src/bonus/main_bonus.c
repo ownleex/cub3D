@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:29:49 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/22 23:31:23 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/24 04:51:50 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	key_press(int keycode, t_game *game)
 		game->key_left = 1;
 	else if (keycode == KEY_RIGHT)
 		game->key_right = 1;
+	else if (keycode == KEY_TAB)
+		game->mouse_captured = !game->mouse_captured;
 	return (0);
 }
 

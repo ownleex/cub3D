@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 00:07:37 by ayarmaya          #+#    #+#             */
-/*   Updated: 2024/01/18 05:09:25 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/24 03:44:53 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,3 @@ void	ft_putnbr_fd(int nb, int fd)
 	}
 	ft_putchar_fd((nbr % 10 + '0'), fd);
 }
-
-/*
-int	main(void)
-{
-	ft_putnbr_fd(-1599655345, 1);
-	ft_putchar_fd('\n', 1);
-	return (0);
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 17:15:55 by ayarmaya          #+#    #+#             */
-/*   Updated: 2024/01/18 05:08:34 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/24 03:42:23 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,3 @@ char	*ft_itoa(int n)
 	}
 	return (result);
 }
-
-/*
-int	main(void)
-{
-	int	n;
-
-	n = -2147483647;
-	printf("%s\n", ft_itoa(n));
-	return (0);
-}
-*/

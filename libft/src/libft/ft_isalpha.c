@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 01:53:40 by ayarmaya          #+#    #+#             */
-/*   Updated: 2024/01/18 05:08:25 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/24 03:41:55 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,3 @@ int	ft_isalpha(int c)
 	else
 		return (0);
 }
-
-/*
-int	main(void)
-{
-	int	c;
-
-	c = '0';
-	if (ft_isalpha(c))
-		printf("Le caractere est une lettre\n");
-	else
-		printf("Le caractere n'est pas une lettre\n");
-	return (0);
-}
-*/

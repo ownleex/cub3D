@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 20:16:02 by ayarmaya          #+#    #+#             */
-/*   Updated: 2024/01/18 05:09:39 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/24 03:45:29 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,18 +40,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	result[i + j] = '\0';
 	return (result);
 }
-
-/*
-int	main(void)
-{
-	char	*s1;
-	char	*s2;
-	char	*single;
-
-	s1 = "test1";
-	s2 = "test2";
-	single = ft_strjoin(s1, s2);
-	printf("%s\n", single);
-	return (0);
-}
-*/

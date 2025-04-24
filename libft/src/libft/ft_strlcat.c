@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 01:56:28 by ayarmaya          #+#    #+#             */
-/*   Updated: 2024/01/18 05:09:42 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/24 03:45:34 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	}
 	return (i + len_s);
 }
-
-/*
-int	main(void)
-{
-	char dest[7] = "Hello, ";
-	char src[] = "world!";
-	unsigned int size = 50;
-	unsigned int result;
-
-	printf("Avant ft_strlcat : %s\n", dest);
-	result = ft_strlcat(dest, src, size);
-	printf("Apres ft_strlcat : %s\n", dest);
-	printf("Valeur renvoyee : %u\n", result);
-	return (0);
-}
-*/

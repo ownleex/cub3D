@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 14:27:37 by ayarmaya          #+#    #+#             */
-/*   Updated: 2024/01/18 05:09:35 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/24 03:45:13 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,3 @@ char	*ft_strdup(const char *str)
 	copy[i] = '\0';
 	return (copy);
 }
-
-/*
-int	main(void)
-{
-	char	*str;
-	char	*copy;
-
-	str = "test";
-	copy = ft_strdup(str);
-	printf("%s\n", copy);
-	return (0);
-}
-*/

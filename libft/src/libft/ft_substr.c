@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 14:50:26 by ayarmaya          #+#    #+#             */
-/*   Updated: 2024/01/18 05:10:00 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/24 03:46:10 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,3 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 	result[i] = '\0';
 	return (result);
 }
-
-/*
-int	main(void)
-{
-	char	*str;
-	char	*substr;
-
-	str = "anticonstitutionnellement";
-	substr = ft_substr(str, 3, 8);
-	printf("%s\n", substr);
-	return (0);
-}
-*/
