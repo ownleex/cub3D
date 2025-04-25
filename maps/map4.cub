@@ -1,7 +1,10 @@
-NO ./textures/set3/north.xpm
-SO ./textures/set3/south.xpm
-WE ./textures/set3/west.xpm
-EA ./textures/set3/east.xpm
+NO ./textures/set4/north.xpm
+NO2 ./textures/set4/north_a.xpm
+NO3 ./textures/set4/north_b.xpm
+NO4 ./textures/set4/north_c.xpm
+SO ./textures/set4/south.xpm
+WE ./textures/set4/west.xpm
+EA ./textures/set4/east.xpm
 
 F 80,80,80
 C 130,130,130

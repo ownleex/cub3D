@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:32:37 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/23 00:42:43 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/25 15:15:15 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,12 @@ bool	parse_texture_line(t_game *game, char *line)
 {
 	if (ft_strncmp(line, "NO ", 3) == 0)
 		return (load_texture(game, &game->tex.north, line + 3));
+	else if (ft_strncmp(line, "NO2 ", 4) == 0)
+		return (load_texture(game, &game->tex.north_a, line + 4));
+	else if (ft_strncmp(line, "NO3 ", 4) == 0)
+		return (load_texture(game, &game->tex.north_b, line + 4));
+	else if (ft_strncmp(line, "NO4 ", 4) == 0)
+		return (load_texture(game, &game->tex.north_c, line + 4));
 	else if (ft_strncmp(line, "SO ", 3) == 0)
 		return (load_texture(game, &game->tex.south, line + 3));
 	else if (ft_strncmp(line, "WE ", 3) == 0)
@@ -81,8 +87,8 @@ bool	parse_texture_line(t_game *game, char *line)
 
 bool	check_textures_loaded(t_game *game)
 {
-	if (!game->tex.north.img || !game->tex.south.img || \
-!game->tex.east.img || !game->tex.west.img)
+	if (!game->tex.north.img || !game->tex.north_a.img || \
+!game->tex.south.img || !game->tex.east.img || !game->tex.west.img)
 		return (false);
 	return (true);
 }
@@ -100,6 +106,9 @@ bool	parse_textures(t_game *game)
 			continue ;
 		}
 		if (ft_strncmp(game->file[i], "NO ", 3) == 0 || \
+ft_strncmp(game->file[i], "NO2 ", 4) == 0 || \
+ft_strncmp(game->file[i], "NO3 ", 4) == 0 || \
+ft_strncmp(game->file[i], "NO4 ", 4) == 0 || \
 ft_strncmp(game->file[i], "SO ", 3) == 0 || \
 ft_strncmp(game->file[i], "WE ", 3) == 0 || \
 ft_strncmp(game->file[i], "EA ", 3) == 0 || \

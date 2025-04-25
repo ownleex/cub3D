@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:35:02 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/22 23:30:58 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/25 15:00:42 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,12 @@ void	free_textures(t_game *game)
 {
 	if (game->tex.north.img)
 		mlx_destroy_image(game->mlx, game->tex.north.img);
+	if (game->tex.north_a.img)
+		mlx_destroy_image(game->mlx, game->tex.north_a.img);
+	if (game->tex.north_b.img)
+		mlx_destroy_image(game->mlx, game->tex.north_b.img);
+	if (game->tex.north_c.img)
+		mlx_destroy_image(game->mlx, game->tex.north_c.img);
 	if (game->tex.south.img)
 		mlx_destroy_image(game->mlx, game->tex.south.img);
 	if (game->tex.east.img)

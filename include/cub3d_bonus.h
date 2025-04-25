@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 21:30:45 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/24 05:45:40 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/25 14:53:15 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@
 # define KEY_RIGHT 65363
 # define KEY_TAB 65289
 
-# define MOVE_SPEED 0.025
-# define ROT_SPEED 0.02
+# define MOVE_SPEED 0.035
+# define ROT_SPEED 0.03
 
 typedef struct s_vector
 {
@@ -59,6 +59,9 @@ typedef struct s_texture
 typedef struct s_tex
 {
 	t_texture	north;
+	t_texture	north_a;
+	t_texture	north_b;
+	t_texture	north_c;
 	t_texture	south;
 	t_texture	east;
 	t_texture	west;
@@ -109,6 +112,7 @@ typedef struct s_game
 	int			key_left;
 	int			key_right;
 	int			mouse_captured;
+	int			frame;
 }	t_game;
 
 /* init.c */

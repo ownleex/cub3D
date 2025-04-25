@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 02:13:10 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/23 16:44:01 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/25 06:06:56 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ void	draw_minimap_arrow(t_game *game, int size)
 	left.y = pos.y + game->player.dir.x * size * 0.4;
 	right.x = pos.x + game->player.dir.y * size * 0.4;
 	right.y = pos.y - game->player.dir.x * size * 0.4;
-	draw_line(game, pos, tip, 0xFF0000);
-	draw_line(game, pos, left, 0xFF0000);
-	draw_line(game, pos, right, 0xFF0000);
+	draw_line(game, pos, tip, 0xFFFF00);
+	draw_line(game, pos, left, 0xFFFF00);
+	draw_line(game, pos, right, 0xFFFF00);
 }
 
 void	draw_minimap_background(t_game *game, int size)
