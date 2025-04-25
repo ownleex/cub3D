@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 21:30:45 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/25 14:53:15 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/25 16:44:28 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,8 @@ typedef struct s_game
 	int			img_line_length;
 	int			img_endian;
 	t_tex		tex;
+	int			floor_defined;
+	int			ceiling_defined;
 	t_player	player;
 	t_ray		ray;
 	char		**map;
