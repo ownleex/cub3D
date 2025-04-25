@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:32:37 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/23 00:38:10 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/25 16:02:00 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,10 @@ bool	check_textures_loaded(t_game *game)
 {
 	if (!game->tex.north.img || !game->tex.south.img || \
 !game->tex.east.img || !game->tex.west.img)
+	{
+		printf("Error: Missing texture, ceiling or floor definition\n");
 		return (false);
+	}
 	return (true);
 }
 
