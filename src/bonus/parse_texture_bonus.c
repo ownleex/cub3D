@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:32:37 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/25 15:15:15 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/25 16:01:44 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,13 @@ bool	parse_texture_line(t_game *game, char *line)
 bool	check_textures_loaded(t_game *game)
 {
 	if (!game->tex.north.img || !game->tex.north_a.img || \
-!game->tex.south.img || !game->tex.east.img || !game->tex.west.img)
+!game->tex.north_b.img || !game->tex.north_c.img || \
+!game->tex.south.img || !game->tex.east.img || \
+!game->tex.west.img || (game->tex.floor == 0) || (game->tex.ceiling == 0))
+	{
+		printf("Error: Missing texture, ceiling or floor definition\n");
 		return (false);
+	}
 	return (true);
 }
 

@@ -6,7 +6,7 @@
 #    By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/13 23:22:13 by ayarmaya          #+#    #+#              #
-#    Updated: 2025/04/23 15:22:32 by ayarmaya         ###   ########.fr        #
+#    Updated: 2025/04/25 16:09:49 by ayarmaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,7 +68,7 @@ BONUS_SRCS   = $(BONUS_SRCDIR)/main_bonus.c \
 		       $(BONUS_SRCDIR)/free_bonus.c \
 	 		   $(BONUS_SRCDIR)/dda_bonus.c \
 			   $(BONUS_SRCDIR)/minimap_bonus.c \
-			   $(BONUS_SRCDIR)/mouse_move.c
+			   $(BONUS_SRCDIR)/mouse_move_bonus.c
 
 
 BONUS_OBJDIR      = obj/bonus
