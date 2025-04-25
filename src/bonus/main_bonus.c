@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:29:49 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/24 04:51:50 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/25 03:17:51 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int	key_release(int keycode, t_game *game)
 
 int	update_game(t_game *game)
 {
+	game->frame++;
 	if (game->keys[KEY_W])
 		move_forward(game);
 	if (game->keys[KEY_S])

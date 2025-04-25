@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:34:04 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/23 00:15:29 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/25 15:08:54 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,16 @@ t_texture	*select_texture(t_game *game, t_ray *ray)
 	else
 	{
 		if (ray->step.y < 0)
-			return (&game->tex.north);
+		{
+			if (((game->frame / 15) % 4) == 0)
+				return (&game->tex.north);
+			else if (((game->frame / 15) % 4) == 1)
+				return (&game->tex.north_a);
+			else if (((game->frame / 15) % 4) == 2)
+				return (&game->tex.north_b);
+			else
+				return (&game->tex.north_c);
+		}
 		else
 			return (&game->tex.south);
 	}
