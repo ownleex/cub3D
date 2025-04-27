@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: cparodi <cparodi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:29:49 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/25 16:48:42 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/27 13:04:11 by cparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ int	update_game(t_game *game)
 		rotate(game, ROT_SPEED);
 	else if (game->keys[KEY_E])
 		interact_door(game);
-	printf("door : %d\n", game->door_list[0].is_open);
 	return (render(game));
 }
 
