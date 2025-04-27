@@ -6,7 +6,7 @@
 /*   By: cparodi <cparodi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:32:04 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/27 13:05:53 by cparodi          ###   ########.fr       */
+/*   Updated: 2025/04/27 16:27:23 by cparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,38 +53,40 @@ bool	parse_map(t_game *game)
 	return (validate_map(game));
 }
 
-static t_door *create_door(int x, int y)
+static t_door	*create_door(int x, int y)
 {
-    t_door *door = malloc(sizeof(t_door));
-    if (!door)
-        return (NULL);
-    door->x = x;
-    door->y = y;
-    door->is_open = 0;
-    door->next = NULL;
-    return (door);
+	t_door	*door;
+
+	door = malloc(sizeof(t_door));
+	if (!door)
+		return (NULL);
+	door->x = x;
+	door->y = y;
+	door->is_open = 0;
+	door->next = NULL;
+	return (door);
 }
 
-void find_door(t_game *game)
+void	find_door(t_game *game)
 {
-    int x;
-	int y;
-    t_door *new_door;
+	int		x;
+	int		y;
+	t_door	*new_door;
 
-    y = 0;
-    while (y < game->map_height)
-    {
-        x = 0;
-        while (x < game->map_width)
-        {
-            if (game->map[y][x] == 'D')
-            {
-                new_door = create_door(x, y);
-                new_door->next = game->door_list;
-                game->door_list = new_door;
-            }
-            x++;
-        }
-        y++;
-    }
+	y = 0;
+	while (y < game->map_height)
+	{
+		x = 0;
+		while (x < game->map_width)
+		{
+			if (game->map[y][x] == 'D')
+			{
+				new_door = create_door(x, y);
+				new_door->next = game->door_list;
+				game->door_list = new_door;
+			}
+			x++;
+		}
+		y++;
+	}
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_bonus.c                                       :+:      :+:    :+:   */
+/*   is_blocked_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: cparodi <cparodi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:31:04 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/25 03:17:34 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/27 16:31:49 by cparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 int	is_blocked(t_game *game, int x, int y)
 {
+	t_door	*door;
+
 	if (game->map[y][x] == '1')
 		return (1);
 	if (game->map[y][x] == 'D')
 	{
-		t_door *door = game->door_list;
+		door = game->door_list;
 		while (door)
 		{
 			if (door->x == x && door->y == y)

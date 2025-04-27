@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: cparodi <cparodi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 21:30:45 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/25 16:44:28 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/27 16:33:52 by cparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,16 @@
 # define KEY_RIGHT 65363
 # define KEY_TAB 65289
 
-# define MOVE_SPEED 0.035
-# define ROT_SPEED 0.03
+# define MOVE_SPEED 0.025
+# define ROT_SPEED 0.02
 
 typedef struct s_door
 {
-    int x;
-    int y;
-    int is_open;
-	struct s_door *next;
-} t_door;
+	int				x;
+	int				y;
+	int				is_open;
+	struct s_door	*next;
+}	t_door;
 
 typedef struct s_vector
 {
@@ -124,7 +124,7 @@ typedef struct s_game
 	int			key_right;
 	int			mouse_captured;
 	int			frame;
-	t_door 		*door_list;
+	t_door		*door_list;
 }	t_game;
 
 /* init.c */
@@ -214,6 +214,6 @@ void		perform_dda(t_game *game, t_ray *ray);
 
 void		draw_minimap(t_game *game);
 
-void    interact_door(t_game *game);
+void		interact_door(t_game *game);
 
 #endif
