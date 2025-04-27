@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_bonus.c                                       :+:      :+:    :+:   */
+/*   is_blocked_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cparodi <cparodi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/13 23:35:02 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/27 16:18:54 by cparodi          ###   ########.fr       */
+/*   Created: 2025/04/13 23:31:04 by ayarmaya          #+#    #+#             */
+/*   Updated: 2025/04/27 16:31:49 by cparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d_bonus.h"
 
-void	free_file(t_game *game)
+int	is_blocked(t_game *game, int x, int y)
 {
-	int	i;
+	t_door	*door;
 
-	if (!game->file)
-		return ;
-	i = 0;
-	while (game->file[i])
+	if (game->map[y][x] == '1')
+		return (1);
+	if (game->map[y][x] == 'D')
 	{
-		free(game->file[i]);
-		i++;
+		door = game->door_list;
+		while (door)
+		{
+			if (door->x == x && door->y == y)
+			{
+				if (door->is_open == 0)
+					return (1);
+			}
+			door = door->next;
+		}
 	}
-	free(game->file);
-	game->file = NULL;
+	return (0);
 }

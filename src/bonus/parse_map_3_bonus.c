@@ -26,7 +26,7 @@ bool	check_map_chars(t_game *game)
 			if (game->map[y][x] != '0' && game->map[y][x] != '1' && \
 game->map[y][x] != 'N' && game->map[y][x] != 'S' && \
 game->map[y][x] != 'E' && game->map[y][x] != 'W' && \
-game->map[y][x] != ' ')
+game->map[y][x] != ' ' && game->map[y][x] != 'D')
 				return (false);
 			x++;
 		}
@@ -133,5 +133,6 @@ position (N, S, E, or W)\n");
 		printf("Error\nMap must be completely enclosed by walls\n");
 		return (false);
 	}
+	find_door(game);
 	return (true);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mouse_move.c                                       :+:      :+:    :+:   */
+/*   mouse_move_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: cparodi <cparodi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 02:13:10 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/24 17:13:36 by ayarmaya         ###   ########.fr       */
+/*   Created: 2025/04/27 16:19:21 by cparodi           #+#    #+#             */
+/*   Updated: 2025/04/27 16:19:23 by cparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ int	mouse_move(int x, int y, t_game *game)
 	sensi = 0.003;
 	if (game->mouse_captured)
 	{
+		mlx_mouse_hide(game->mlx, game->win);
 		if (delta_x != 0)
 		{
 			rotate(game, delta_x * sensi);
 			mlx_mouse_move(game->mlx, game->win, center_x, WINDOW_HEIGHT / 2);
-			mlx_mouse_hide(game->mlx, game->win);
 		}
 	}
 	else

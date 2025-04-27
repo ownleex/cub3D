@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: cparodi <cparodi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/16 18:30:40 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/22 21:29:58 by ayarmaya         ###   ########.fr       */
+/*   Created: 2025/04/27 16:18:59 by cparodi           #+#    #+#             */
+/*   Updated: 2025/04/27 16:19:02 by cparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	move_forward(t_game *game)
 
 	new_x = game->player.pos.x + game->player.dir.x * MOVE_SPEED;
 	new_y = game->player.pos.y + game->player.dir.y * MOVE_SPEED;
-	if (game->map[(int)game->player.pos.y][(int)new_x] != '1')
+	if (!is_blocked(game, (int)new_x, (int)game->player.pos.y))
 		game->player.pos.x = new_x;
-	if (game->map[(int)new_y][(int)game->player.pos.x] != '1')
+	if (!is_blocked(game, (int)game->player.pos.x, (int)new_y))
 		game->player.pos.y = new_y;
 }
 
@@ -32,9 +32,9 @@ void	move_backward(t_game *game)
 
 	new_x = game->player.pos.x - game->player.dir.x * MOVE_SPEED;
 	new_y = game->player.pos.y - game->player.dir.y * MOVE_SPEED;
-	if (game->map[(int)game->player.pos.y][(int)new_x] != '1')
+	if (!is_blocked(game, (int)new_x, (int)game->player.pos.y))
 		game->player.pos.x = new_x;
-	if (game->map[(int)new_y][(int)game->player.pos.x] != '1')
+	if (!is_blocked(game, (int)game->player.pos.x, (int)new_y))
 		game->player.pos.y = new_y;
 }
 
@@ -45,9 +45,9 @@ void	move_left(t_game *game)
 
 	new_x = game->player.pos.x + game->player.dir.y * MOVE_SPEED;
 	new_y = game->player.pos.y - game->player.dir.x * MOVE_SPEED;
-	if (game->map[(int)game->player.pos.y][(int)new_x] != '1')
+	if (!is_blocked(game, (int)new_x, (int)game->player.pos.y))
 		game->player.pos.x = new_x;
-	if (game->map[(int)new_y][(int)game->player.pos.x] != '1')
+	if (!is_blocked(game, (int)game->player.pos.x, (int)new_y))
 		game->player.pos.y = new_y;
 }
 
@@ -58,9 +58,9 @@ void	move_right(t_game *game)
 
 	new_x = game->player.pos.x - game->player.dir.y * MOVE_SPEED;
 	new_y = game->player.pos.y + game->player.dir.x * MOVE_SPEED;
-	if (game->map[(int)game->player.pos.y][(int)new_x] != '1')
+	if (!is_blocked(game, (int)new_x, (int)game->player.pos.y))
 		game->player.pos.x = new_x;
-	if (game->map[(int)new_y][(int)game->player.pos.x] != '1')
+	if (!is_blocked(game, (int)game->player.pos.x, (int)new_y))
 		game->player.pos.y = new_y;
 }
 

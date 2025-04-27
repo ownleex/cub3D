@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: cparodi <cparodi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:29:49 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/25 16:48:42 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/27 13:04:11 by cparodi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	key_press(int keycode, t_game *game)
 		game->key_left = 1;
 	else if (keycode == KEY_RIGHT)
 		game->key_right = 1;
+	else if (keycode == KEY_E)
+		game->keys[KEY_E] = 1;
 	else if (keycode == KEY_TAB)
 	{
 		game->mouse_captured = !game->mouse_captured;
@@ -51,6 +53,8 @@ int	key_release(int keycode, t_game *game)
 		game->key_left = 0;
 	else if (keycode == KEY_RIGHT)
 		game->key_right = 0;
+	else if (keycode == KEY_E)
+		game->keys[KEY_E] = 0;
 	return (0);
 }
 
@@ -69,6 +73,8 @@ int	update_game(t_game *game)
 		rotate(game, -ROT_SPEED);
 	if (game->key_right)
 		rotate(game, ROT_SPEED);
+	else if (game->keys[KEY_E])
+		interact_door(game);
 	return (render(game));
 }
 

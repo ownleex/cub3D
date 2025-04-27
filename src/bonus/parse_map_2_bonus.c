@@ -37,7 +37,7 @@ game->file[i][0] == '\0')
 			if (game->file[i][j] != '0' && game->file[i][j] != '1' && \
 game->file[i][j] != 'N' && game->file[i][j] != 'S' && \
 game->file[i][j] != 'E' && game->file[i][j] != 'W' && \
-game->file[i][j] != ' ')
+game->file[i][j] != ' ' && game->file[i][j] != 'D')
 				break ;
 			j++;
 		}
@@ -64,7 +64,7 @@ int	count_map_height(t_game *game, int start)
 			if (game->file[i][j] != '0' && game->file[i][j] != '1' && \
 game->file[i][j] != 'N' && game->file[i][j] != 'S' && \
 game->file[i][j] != 'E' && game->file[i][j] != 'W' && \
-game->file[i][j] != ' ')
+game->file[i][j] != ' ' && game->file[i][j] != 'D')
 				return (height);
 			j++;
 		}
