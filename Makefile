@@ -6,12 +6,9 @@
 #    By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/13 23:22:13 by ayarmaya          #+#    #+#              #
-#    Updated: 2025/04/25 16:09:49 by ayarmaya         ###   ########.fr        #
+#    Updated: 2025/04/27 18:39:52 by ayarmaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-
-
 
 NAME        = cub3D
 BONUS_NAME  = cub3D_bonus
@@ -92,11 +89,14 @@ $(BONUS_NAME): $(BONUS_OBJS)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@mkdir -p $(@D)
-	$(CC) $(CFLAGS) $(HEADERS) -c $< -o $@
+	$(CC) $(CFLAGS) $(HEADERS) -MMD -MP -c $< -o $@
 
 $(BONUS_OBJDIR)/%.o: $(BONUS_SRCDIR)/%.c
 	@mkdir -p $(@D)
-	$(CC) $(CFLAGS) $(HEADERS) -c $< -o $@
+	$(CC) $(CFLAGS) $(HEADERS) -MMD -MP -c $< -o $@
+
+-include $(OBJS:.o=.d)
+-include $(BONUS_OBJS:.o=.d)
 
 clean:
 	$(RMDIR) $(OBJDIR)
