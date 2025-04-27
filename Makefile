@@ -68,7 +68,9 @@ BONUS_SRCS   = $(BONUS_SRCDIR)/main_bonus.c \
 		       $(BONUS_SRCDIR)/free_bonus.c \
 	 		   $(BONUS_SRCDIR)/dda_bonus.c \
 			   $(BONUS_SRCDIR)/minimap_bonus.c \
-			   $(BONUS_SRCDIR)/mouse_move_bonus.c
+			   $(BONUS_SRCDIR)/mouse_move_bonus.c \
+			   $(BONUS_SRCDIR)/is_blocked_bonus.c \
+			   $(BONUS_SRCDIR)/interact_door_bonus.c
 
 
 BONUS_OBJDIR      = obj/bonus

@@ -28,6 +28,8 @@ int	key_press(int keycode, t_game *game)
 		game->key_left = 1;
 	else if (keycode == KEY_RIGHT)
 		game->key_right = 1;
+	else if (keycode == KEY_E)
+		game->keys[KEY_E] = 1;
 	else if (keycode == KEY_TAB)
 	{
 		game->mouse_captured = !game->mouse_captured;
@@ -51,6 +53,8 @@ int	key_release(int keycode, t_game *game)
 		game->key_left = 0;
 	else if (keycode == KEY_RIGHT)
 		game->key_right = 0;
+	else if (keycode == KEY_E)
+		game->keys[KEY_E] = 0;
 	return (0);
 }
 
@@ -69,6 +73,9 @@ int	update_game(t_game *game)
 		rotate(game, -ROT_SPEED);
 	if (game->key_right)
 		rotate(game, ROT_SPEED);
+	else if (game->keys[KEY_E])
+		interact_door(game);
+	printf("door : %d\n", game->door_list[0].is_open);
 	return (render(game));
 }
 

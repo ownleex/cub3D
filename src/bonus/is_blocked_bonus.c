@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mouse_move.c                                       :+:      :+:    :+:   */
+/*   init_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 02:13:10 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/24 17:13:36 by ayarmaya         ###   ########.fr       */
+/*   Created: 2025/04/13 23:31:04 by ayarmaya          #+#    #+#             */
+/*   Updated: 2025/04/25 03:17:34 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d_bonus.h"
 
-int	mouse_move(int x, int y, t_game *game)
+int	is_blocked(t_game *game, int x, int y)
 {
-	int		center_x;
-	int		delta_x;
-	double	sensi;
-
-	(void)y;
-	center_x = WINDOW_WIDTH / 2;
-	delta_x = x - center_x;
-	sensi = 0.003;
-	if (game->mouse_captured)
+	if (game->map[y][x] == '1')
+		return (1);
+	if (game->map[y][x] == 'D')
 	{
-		mlx_mouse_hide(game->mlx, game->win);
-		if (delta_x != 0)
+		t_door *door = game->door_list;
+		while (door)
 		{
-			rotate(game, delta_x * sensi);
-			mlx_mouse_move(game->mlx, game->win, center_x, WINDOW_HEIGHT / 2);
+			if (door->x == x && door->y == y)
+			{
+				if (door->is_open == 0)
+					return (1);
+			}
+			door = door->next;
 		}
 	}
-	else
-		mlx_mouse_show(game->mlx, game->win);
 	return (0);
 }
