@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 21:30:45 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/28 18:47:13 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/28 19:30:23 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -209,6 +209,7 @@ bool		is_exterior_wall(t_game *game, int x, int y);
 
 /* free.c */
 void		free_file(t_game *game);
+void		free_door(t_game *game);
 
 /* dda.c */
 void		perform_dda(t_game *game, t_ray *ray);
