@@ -1,11 +1,11 @@
-NO ./textures/set4/north.xpm
-NO2 ./textures/set4/north_a.xpm
-NO3 ./textures/set4/north_b.xpm
-NO4 ./textures/set4/north_c.xpm
-SO ./textures/set4/south.xpm
-WE ./textures/set4/west.xpm
-EA ./textures/set4/east.xpm
-D ./textures/set4/door.xpm
+NO ./textures/set_bonus/north.xpm
+NO2 ./textures/set_bonus/north_a.xpm
+NO3 ./textures/set_bonus/north_b.xpm
+NO4 ./textures/set_bonus/north_c.xpm
+SO ./textures/set_bonus/south.xpm
+WE ./textures/set_bonus/west.xpm
+EA ./textures/set_bonus/east.xpm
+D ./textures/set_bonus/door.xpm
 
 F 80,80,80
 C 130,130,130

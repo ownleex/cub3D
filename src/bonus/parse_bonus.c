@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:31:34 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/23 00:16:35 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/28 20:49:04 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,10 @@ bool	parse_file(t_game *game, char *file_path)
 	}
 	close(fd);
 	if (!parse_textures(game))
+	{
+		clean_exit(game, EXIT_FAILURE);
 		return (false);
+	}
 	if (!parse_map(game))
 		return (false);
 	return (true);
