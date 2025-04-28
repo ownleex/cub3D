@@ -45,9 +45,13 @@ make bonus
 ```bash
 # Version standard
 ./cub3D maps/map1.cub
+# Version standard
+./cub3D maps/map2.cub
+# Version standard
+./cub3D maps/map3.cub
 
 # Version avec bonus
-./cub3D_bonus maps/map4.cub
+./cub3D_bonus maps/map_bonus.cub
 ```
 
 ### Format du fichier de carte (.cub)
@@ -111,5 +115,5 @@ C 225,30,0
 └── README.md         # Ce fichier
 ```
 
-## Crédits
-Ce projet a été développé dans le cadre du cursus de l'école 42.
+Crédits
+Ce projet a été développé en collaboration avec ElkiaCode dans le cadre du cursus de l'école 42.

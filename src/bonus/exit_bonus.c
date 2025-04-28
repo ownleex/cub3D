@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:35:02 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/28 19:29:30 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/28 20:41:27 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	free_textures(t_game *game)
 		mlx_destroy_image(game->mlx, game->tex.east.img);
 	if (game->tex.west.img)
 		mlx_destroy_image(game->mlx, game->tex.west.img);
-	if (game->tex.west.img)
+	if (game->tex.door.img)
 		mlx_destroy_image(game->mlx, game->tex.door.img);
 }
 
