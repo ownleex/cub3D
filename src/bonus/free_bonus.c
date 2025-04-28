@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cparodi <cparodi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:35:02 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/27 16:18:54 by cparodi          ###   ########.fr       */
+/*   Updated: 2025/04/28 19:29:55 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,19 @@ void	free_file(t_game *game)
 	}
 	free(game->file);
 	game->file = NULL;
+}
+
+void	free_door(t_game *game)
+{
+	t_door	*door;
+	t_door	*next;
+
+	door = game->door_list;
+	while (door)
+	{
+		next = door->next;
+		free(door);
+		door = next;
+	}
+	game->door_list = NULL;
 }
