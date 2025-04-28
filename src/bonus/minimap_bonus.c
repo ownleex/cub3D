@@ -84,7 +84,6 @@ void	draw_minimap_background(t_game *game, int size)
 {
 	int	i;
 	int	j;
-	t_door	*door;
 
 	i = 0;
 	while (i < game->map_height)
@@ -97,21 +96,7 @@ void	draw_minimap_background(t_game *game, int size)
 			else if (game->map[i][j] == '0')
 				draw_minimap_square(game, (t_vector){j, i}, size, 0x444444);
 			else if (game->map[i][j] == 'D')
-			{
-				door = game->door_list;
-				while (door)
-				{
-					if (door->x == j && door->y == i)
-					{
-						if (door->is_open)
-							draw_minimap_square(game, (t_vector){j, i}, size, 0x00FF00);
-						else
-							draw_minimap_square(game, (t_vector){j, i}, size, 0xFF0000);
-						break;
-					}
-					door = door->next;
-				}
-			}			
+				check_minimap_door(game, i, j, size);		
 			j++;
 		}
 		i++;
