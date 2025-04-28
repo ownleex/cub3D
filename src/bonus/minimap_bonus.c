@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 02:13:10 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/28 16:36:36 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/28 16:59:36 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,9 @@ void	draw_minimap_background(t_game *game, int size)
 {
 	int	i;
 	int	j;
+	t_door	*door;
 
+	door = game->door_list;
 	i = 0;
 	while (i < game->map_height)
 	{
@@ -95,11 +97,21 @@ void	draw_minimap_background(t_game *game, int size)
 				draw_minimap_square(game, (t_vector){j, i}, size, 0xFFFFFF);
 			else if (game->map[i][j] == '0')
 				draw_minimap_square(game, (t_vector){j, i}, size, 0x444444);
-			else if (game->map[i][j] == 'D' && game->door_list->is_open)
-				draw_minimap_square(game, (t_vector){j, i}, size, 0x00FF00);
-			else if (game->map[i][j] == 'D' && !game->door_list->is_open)
-				draw_minimap_square(game, (t_vector){j, i}, size, 0xFF0000);
-				
+			else if (game->map[i][j] == 'D')
+			{
+				while (door)
+				{
+					if (door->is_open)
+					{
+						draw_minimap_square(game, (t_vector){j, i}, size, 0x00FF00);
+					}
+					else if (!door->is_open)
+					{
+						draw_minimap_square(game, (t_vector){j, i}, size, 0xFF0000);
+					}
+					door = door->next;
+				}
+			}			
 			j++;
 		}
 		i++;
