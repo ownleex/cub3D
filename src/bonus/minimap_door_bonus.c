@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_blocked_bonus.c                                 :+:      :+:    :+:   */
+/*   minimap_door_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cparodi <cparodi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:31:04 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/27 16:31:49 by cparodi          ###   ########.fr       */
+/*   Updated: 2025/04/28 18:36:52 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ size, 0x00FF00);
 			else
 				draw_minimap_square(game, (t_vector){j, i}, \
 size, 0xFF0000);
-			break;
+			break ;
 		}
 		door = door->next;
 	}

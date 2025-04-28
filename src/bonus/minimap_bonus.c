@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 02:13:10 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/28 17:08:48 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/28 18:37:24 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	draw_minimap_background(t_game *game, int size)
 			else if (game->map[i][j] == '0')
 				draw_minimap_square(game, (t_vector){j, i}, size, 0x444444);
 			else if (game->map[i][j] == 'D')
-				check_minimap_door(game, i, j, size);		
+				check_minimap_door(game, i, j, size);
 			j++;
 		}
 		i++;
