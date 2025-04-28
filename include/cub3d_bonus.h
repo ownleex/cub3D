@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cparodi <cparodi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 21:30:45 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/27 16:33:52 by cparodi          ###   ########.fr       */
+/*   Updated: 2025/04/28 18:47:13 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -213,12 +213,15 @@ void		free_file(t_game *game);
 /* dda.c */
 void		perform_dda(t_game *game, t_ray *ray);
 
+/* minimap_bonus.c */
 void		draw_minimap(t_game *game);
+void		draw_minimap_square(t_game *game, t_vector grid, \
+int size, int color);
 
+/* interact_door_bonus */
 void		interact_door(t_game *game);
 
+/* minimap_door_bonus.c */
 void		check_minimap_door(t_game *game, int i, int j, int size);
-
-void	draw_minimap_square(t_game *game, t_vector grid, int size, int color);
 
 #endif

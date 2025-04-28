@@ -3,14 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   dda_bonus.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cparodi <cparodi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 16:18:31 by cparodi           #+#    #+#             */
-/*   Updated: 2025/04/27 16:18:33 by cparodi          ###   ########.fr       */
+/*   Updated: 2025/04/28 18:43:48 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d_bonus.h"
+
+static void	calculate_next_step(t_ray *ray)
+{
+	if (ray->side_dist.x < ray->side_dist.y)
+	{
+		ray->side_dist.x += ray->delta_dist.x;
+		ray->map_x += ray->step.x;
+		ray->side = 0;
+	}
+	else
+	{
+		ray->side_dist.y += ray->delta_dist.y;
+		ray->map_y += ray->step.y;
+		ray->side = 1;
+	}
+}
 
 static void	run_dda(t_game *game, t_ray *ray)
 {
@@ -20,26 +36,16 @@ static void	run_dda(t_game *game, t_ray *ray)
 	hit = false;
 	while (!hit)
 	{
-		if (ray->side_dist.x < ray->side_dist.y)
-		{
-			ray->side_dist.x += ray->delta_dist.x;
-			ray->map_x += ray->step.x;
-			ray->side = 0;
-		}
-		else
-		{
-			ray->side_dist.y += ray->delta_dist.y;
-			ray->map_y += ray->step.y;
-			ray->side = 1;
-		}
+		calculate_next_step(ray);
 		if (game->map[ray->map_y][ray->map_x] == '1')
-		hit = true;
+			hit = true;
 		else if (game->map[ray->map_y][ray->map_x] == 'D')
 		{
 			door = game->door_list;
 			while (door)
 			{
-				if (!door->is_open && (ray->map_y == door->y && ray->map_x == door->x))
+				if (!door->is_open && (ray->map_y == door->y && \
+ray->map_x == door->x))
 					hit = true;
 				door = door->next;
 			}
