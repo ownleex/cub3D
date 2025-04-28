@@ -49,7 +49,14 @@ void	draw_textured_wall(t_game *game, int x, t_ray *ray, int y)
 	double		step;
 	double		tex_pos;
 
-	tex = select_texture(game, ray);
+	if (game->map[ray->map_y][ray->map_x] == 'D')
+	{
+		tex = &game->tex.door;
+	}
+	else
+	{
+		tex = select_texture(game, ray);
+	}
 	step = 1.0 * TEXTURE_HEIGHT / ray->line_height;
 	tex_pos = (ray->draw_start - WINDOW_HEIGHT / 2 + \
 ray->line_height / 2) * step;

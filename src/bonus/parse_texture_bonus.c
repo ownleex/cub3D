@@ -84,6 +84,8 @@ bool	parse_texture_line(t_game *game, char *line)
 		return (load_texture(game, &game->tex.west, line + 3));
 	else if (ft_strncmp(line, "EA ", 3) == 0)
 		return (load_texture(game, &game->tex.east, line + 3));
+	else if (ft_strncmp(line, "D  ", 2) == 0)
+		return (load_texture(game, &game->tex.door, line + 2));
 	else if (ft_strncmp(line, "F ", 2) == 0)
 		return (parse_color(game, line, 'F'));
 	else if (ft_strncmp(line, "C ", 2) == 0)
@@ -96,7 +98,7 @@ bool	check_textures_loaded(t_game *game)
 	if (!game->tex.north.img || !game->tex.north_a.img || \
 !game->tex.north_b.img || !game->tex.north_c.img || \
 !game->tex.south.img || !game->tex.east.img || \
-!game->tex.west.img || !game->floor_defined || !game->ceiling_defined)
+!game->tex.west.img || !game->floor_defined || !game->ceiling_defined || !game->tex.door.img)
 	{
 		printf("Error: Missing texture, ceiling or floor definition\n");
 		return (false);
@@ -123,6 +125,7 @@ ft_strncmp(game->file[i], "NO4 ", 4) == 0 || \
 ft_strncmp(game->file[i], "SO ", 3) == 0 || \
 ft_strncmp(game->file[i], "WE ", 3) == 0 || \
 ft_strncmp(game->file[i], "EA ", 3) == 0 || \
+ft_strncmp(game->file[i], "D ", 2) == 0 || \
 ft_strncmp(game->file[i], "F ", 2) == 0 || \
 ft_strncmp(game->file[i], "C ", 2) == 0)
 		{

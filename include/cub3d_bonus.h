@@ -74,6 +74,7 @@ typedef struct s_tex
 	t_texture	south;
 	t_texture	east;
 	t_texture	west;
+	t_texture	door;
 	int			floor;
 	int			ceiling;
 }	t_tex;

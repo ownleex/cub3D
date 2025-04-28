@@ -5,6 +5,7 @@ NO4 ./textures/set4/north_c.xpm
 SO ./textures/set4/south.xpm
 WE ./textures/set4/west.xpm
 EA ./textures/set4/east.xpm
+D ./textures/set4/door.xpm
 
 F 80,80,80
 C 130,130,130

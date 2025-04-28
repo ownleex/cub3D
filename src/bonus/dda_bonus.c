@@ -15,6 +15,7 @@
 static void	run_dda(t_game *game, t_ray *ray)
 {
 	bool	hit;
+	t_door	*door;
 
 	hit = false;
 	while (!hit)
@@ -32,7 +33,17 @@ static void	run_dda(t_game *game, t_ray *ray)
 			ray->side = 1;
 		}
 		if (game->map[ray->map_y][ray->map_x] == '1')
-			hit = true;
+		hit = true;
+		else if (game->map[ray->map_y][ray->map_x] == 'D')
+		{
+			door = game->door_list;
+			while (door)
+			{
+				if (!door->is_open && (ray->map_y == door->y && ray->map_x == door->x))
+					hit = true;
+				door = door->next;
+			}
+		}
 	}
 }
 

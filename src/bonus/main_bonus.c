@@ -53,8 +53,6 @@ int	key_release(int keycode, t_game *game)
 		game->key_left = 0;
 	else if (keycode == KEY_RIGHT)
 		game->key_right = 0;
-	else if (keycode == KEY_E)
-		game->keys[KEY_E] = 0;
 	return (0);
 }
 
@@ -74,7 +72,10 @@ int	update_game(t_game *game)
 	if (game->key_right)
 		rotate(game, ROT_SPEED);
 	else if (game->keys[KEY_E])
+	{
 		interact_door(game);
+		game->keys[KEY_E] = 0;
+	}
 	return (render(game));
 }
 
