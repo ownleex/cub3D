@@ -98,7 +98,8 @@ bool	check_textures_loaded(t_game *game)
 	if (!game->tex.north.img || !game->tex.north_a.img || \
 !game->tex.north_b.img || !game->tex.north_c.img || \
 !game->tex.south.img || !game->tex.east.img || \
-!game->tex.west.img || !game->floor_defined || !game->ceiling_defined || !game->tex.door.img)
+!game->tex.west.img || !game->floor_defined || !game->ceiling_defined || \
+!game->tex.door.img)
 	{
 		printf("Error: Missing texture, ceiling or floor definition\n");
 		return (false);

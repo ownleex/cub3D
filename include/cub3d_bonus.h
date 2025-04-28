@@ -217,4 +217,8 @@ void		draw_minimap(t_game *game);
 
 void		interact_door(t_game *game);
 
+void		check_minimap_door(t_game *game, int i, int j, int size);
+
+void	draw_minimap_square(t_game *game, t_vector grid, int size, int color);
+
 #endif
