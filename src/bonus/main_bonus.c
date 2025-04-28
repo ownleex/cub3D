@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cparodi <cparodi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:29:49 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/27 13:04:11 by cparodi          ###   ########.fr       */
+/*   Updated: 2025/04/28 21:21:28 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,8 @@ int	main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	}
 	game = parsing(game, argv[1]);
+	printf("Usage:\n- E to open and close doors\n- TAB to rotate with mouse\n\
+- <- & -> to rotate\n- WASD to move\n- ESC or click X to quit\n");
 	mlx_hook(game.win, 2, 1L << 0, key_press, &game);
 	mlx_hook(game.win, 3, 1L << 1, key_release, &game);
 	mlx_hook(game.win, 6, (1L << 6), mouse_move, &game);
