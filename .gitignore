@@ -57,6 +57,7 @@ dkms.conf
 settings.json
 *.pdf
 all
+libft
 
 cub3D
 cub3D_bonus

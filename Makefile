@@ -6,7 +6,7 @@
 #    By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/13 23:22:13 by ayarmaya          #+#    #+#              #
-#    Updated: 2025/04/27 18:39:52 by ayarmaya         ###   ########.fr        #
+#    Updated: 2025/05/04 01:16:45 by ayarmaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,6 @@ BONUS_SRCS   = $(BONUS_SRCDIR)/main_bonus.c \
 	 		   $(BONUS_SRCDIR)/dda_bonus.c \
 			   $(BONUS_SRCDIR)/minimap_bonus.c \
 			   $(BONUS_SRCDIR)/mouse_move_bonus.c \
-			   $(BONUS_SRCDIR)/is_blocked_bonus.c \
 			   $(BONUS_SRCDIR)/interact_door_bonus.c \
 			   $(BONUS_SRCDIR)/minimap_door_bonus.c
 

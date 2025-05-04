@@ -6,24 +6,30 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 18:30:40 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/23 00:16:00 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/05/04 01:12:45 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d_bonus.h"
 
-bool	is_exterior_wall(t_game *game, int x, int y)
+int	is_blocked(t_game *game, int x, int y)
 {
-	if (x == 0 || y == 0 || x == game->map_width - 1 || \
-y == game->map_height - 1)
-		return (true);
-	if (x > 0 && game->map[y][x - 1] == ' ')
-		return (true);
-	if (x < game->map_width - 1 && game->map[y][x + 1] == ' ')
-		return (true);
-	if (y > 0 && game->map[y - 1][x] == ' ')
-		return (true);
-	if (y < game->map_height - 1 && game->map[y + 1][x] == ' ')
-		return (true);
-	return (false);
+	t_door	*door;
+
+	if (game->map[y][x] == '1')
+		return (1);
+	if (game->map[y][x] == 'D')
+	{
+		door = game->door_list;
+		while (door)
+		{
+			if (door->x == x && door->y == y)
+			{
+				if (door->is_open == 0)
+					return (1);
+			}
+			door = door->next;
+		}
+	}
+	return (0);
 }

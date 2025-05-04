@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 21:30:45 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/28 19:30:23 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/05/04 01:13:39 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -184,7 +184,7 @@ void		move_left(t_game *game);
 void		move_right(t_game *game);
 void		rotate(t_game *game, double angle);
 
-/* is_blocked.c */
+/* wall.c */
 int			is_blocked(t_game *game, int x, int y);
 
 /* mouse_move.c */
@@ -203,9 +203,6 @@ void		free_textures(t_game *game);
 int			key_press(int keycode, t_game *game);
 int			key_release(int keycode, t_game *game);
 int			update_game(t_game *game);
-
-/* wall.c */
-bool		is_exterior_wall(t_game *game, int x, int y);
 
 /* free.c */
 void		free_file(t_game *game);

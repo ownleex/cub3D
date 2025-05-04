@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 18:45:47 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/22 21:29:27 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/05/04 18:58:54 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ ft_strncmp(game->file[i], "WE ", 3) == 0 || \
 ft_strncmp(game->file[i], "EA ", 3) == 0 || \
 ft_strncmp(game->file[i], "F ", 2) == 0 || \
 ft_strncmp(game->file[i], "C ", 2) == 0 || \
+ft_strncmp(game->file[i], "D ", 2) == 0 || \
 game->file[i][0] == '\0')
 		{
 			i++;
