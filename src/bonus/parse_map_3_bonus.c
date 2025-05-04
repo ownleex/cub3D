@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 18:45:39 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/22 21:29:34 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/05/04 06:08:11 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ bool	check_map_closed(t_game *game)
 		x = 0;
 		while (x < game->map_width)
 		{
-			if (game->map[y][x] == '0')
+			if (game->map[y][x] == '0' || game->map[y][x] == 'D')
 			{
 				if (y == 0 || y == game->map_height - 1 || \
 x == 0 || x == game->map_width - 1)
