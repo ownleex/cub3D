@@ -119,3 +119,5 @@ C 225,30,0
 
 ## Crédits
 Ce projet a été développé en collaboration avec [ElkiaCode](https://github.com/ElkiaCode) dans le cadre du cursus de l'école 42.
+
+![Build](https://github.com/ownleex/12_cub3D/actions/workflows/makefile.yml/badge.svg)
