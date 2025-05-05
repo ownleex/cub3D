@@ -1,4 +1,4 @@
-name: Build cub3d
+name: Build cub3D
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
         run: |
           norminette src/ include/ libft/
 
-      - name: Compile cub3d
+      - name: Compile cub3D
         run: make
 
       - name: Compile bonus version
