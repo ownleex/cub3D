@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:29:49 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/28 21:18:28 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/05/05 17:25:15 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,8 @@ int	main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	}
 	game = parsing(game, argv[1]);
-	printf("Usage:\n- <- & -> to rotate\n- WASD to move\n\
-- ESC or click X to quit\n");
+	printf("Usage:\n- [<-] & [->] to rotate\n- [W] [A] [S] [D] to move\n\
+- [ESC] or click X window to quit\n");
 	mlx_hook(game.win, 2, 1L << 0, key_press, &game);
 	mlx_hook(game.win, 3, 1L << 1, key_release, &game);
 	mlx_hook(game.win, 17, 0, exit_hook, &game);
