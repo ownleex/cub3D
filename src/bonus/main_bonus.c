@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 23:29:49 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/05/05 17:22:45 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/05/05 18:14:35 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,8 @@ int	main(int argc, char **argv)
 	}
 	game = parsing(game, argv[1]);
 	printf("Usage:\n- [E] to open and close doors\n- [TAB] to rotate with mouse\n\
-- [<-] & [->] to rotate\n- [W] [A] [S] [D] to move\n- [ESC] or click X window to quit\n");
+- [<-] & [->] to rotate\n- [W] [A] [S] [D] to move\n\
+- [ESC] or click X window to quit\n");
 	mlx_hook(game.win, 2, 1L << 0, key_press, &game);
 	mlx_hook(game.win, 3, 1L << 1, key_release, &game);
 	mlx_hook(game.win, 6, (1L << 6), mouse_move, &game);

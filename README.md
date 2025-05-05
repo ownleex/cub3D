@@ -1,11 +1,19 @@
 # Cub3D - Premier Ray-caster
 
+![Build](https://github.com/ownleex/12_cub3D/actions/workflows/makefile.yml/badge.svg)
+
 Ce projet a été développé en collaboration avec [ElkiaCode](https://github.com/ElkiaCode) dans le cadre du cursus de l'école 42.
 
 ## Description
 Cub3D est un projet de visualisation 3D inspiré du jeu Wolfenstein 3D, considéré comme le premier FPS de l'histoire. Ce projet met en œuvre la technique du ray-casting pour créer une représentation 3D d'un labyrinthe à partir d'une carte 2D.
 
 Le programme permet de se déplacer dans un environnement 3D, avec des textures différentes selon l'orientation des murs (nord, sud, est, ouest), ainsi que des couleurs configurables pour le sol et le plafond.
+
+### Aperçu du programme en fonctionnement
+
+![Démonstration de Cub3D](assets/demo.gif)
+
+![Démonstration de Cub3D_bonus](assets/demo_bonus.gif)
 
 ## Fonctionnalités
 
@@ -117,3 +125,5 @@ C 225,30,0
 
 ## Crédits
 Ce projet a été développé en collaboration avec [ElkiaCode](https://github.com/ElkiaCode) dans le cadre du cursus de l'école 42.
+
+![Build](https://github.com/ownleex/12_cub3D/actions/workflows/makefile.yml/badge.svg)
