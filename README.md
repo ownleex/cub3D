@@ -9,6 +9,12 @@ Cub3D est un projet de visualisation 3D inspiré du jeu Wolfenstein 3D, considé
 
 Le programme permet de se déplacer dans un environnement 3D, avec des textures différentes selon l'orientation des murs (nord, sud, est, ouest), ainsi que des couleurs configurables pour le sol et le plafond.
 
+### Aperçu du programme en fonctionnement
+
+![Démonstration de Cub3D](assets/demo.gif)
+
+![Démonstration de Cub3D_bonus](assets/demo_bonus.gif)
+
 ## Fonctionnalités
 
 ### Partie Obligatoire
