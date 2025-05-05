@@ -2,9 +2,9 @@ name: Build cub3d
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "alex", "clement" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "alex", "clement" ]
 
 jobs:
   build:
