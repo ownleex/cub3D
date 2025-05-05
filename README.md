@@ -1,5 +1,7 @@
 # Cub3D - Premier Ray-caster
 
+![Build](https://github.com/ownleex/12_cub3D/actions/workflows/makefile.yml/badge.svg)
+
 Ce projet a été développé en collaboration avec [ElkiaCode](https://github.com/ElkiaCode) dans le cadre du cursus de l'école 42.
 
 ## Description
