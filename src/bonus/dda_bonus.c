@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 16:18:31 by cparodi           #+#    #+#             */
-/*   Updated: 2025/04/28 18:43:48 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/05/05 19:20:30 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ static void	calculate_next_step(t_ray *ray)
 	if (ray->side_dist.x < ray->side_dist.y)
 	{
 		ray->side_dist.x += ray->delta_dist.x;
+		
 		ray->map_x += ray->step.x;
 		ray->side = 0;
 	}
