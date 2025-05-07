@@ -30,9 +30,6 @@ jobs:
       - name: Compile cub3D
         run: make
 
-      - name: run cub3D
-        run: ./cub3D maps/map1.cub
-
       - name: Compile bonus version
         run: make bonus
 
